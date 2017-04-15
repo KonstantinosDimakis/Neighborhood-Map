@@ -71,5 +71,21 @@
       console.error('Error during service worker registration:', e);
     });
   }
-  // Code goes here
+  window.initMap = function initMap() {
+    window.map = new google.maps.Map(document.getElementById('map'), {
+      center: {lat: 40.7413549, lng: -73.99802439999996},
+      zoom: 13,
+      /**
+       * You can style a google map however you like. Roads, Parks, Water etc..
+       * Free styles: https://snazzymaps.com/
+       * https://developers.google.com/maps/documentation/javascript/styling
+       * https://developers.google.com/maps/documentation/javascript/reference#MapTypeStyle
+       */
+      styles: [],
+      /**
+       * Allows the user to adjust the map to road, satellite, terrain etc
+       */
+      mapTypeControl: false
+    });
+  };
 })();
