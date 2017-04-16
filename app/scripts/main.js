@@ -71,7 +71,7 @@
       console.error('Error during service worker registration:', e);
     });
   }
-  window.initMap = function initMap() {
+  window.initMap = function() {
     window.map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 40.7413549, lng: -73.99802439999996},
       zoom: 13,
