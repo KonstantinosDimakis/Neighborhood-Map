@@ -217,5 +217,9 @@
        */
       mapTypeControl: false
     });
+    // TODO: Remove this temporary solution to the resize problem
+    setTimeout(function() {
+      google.maps.event.trigger(map, 'resize');
+    }, 1500);
   };
 })();
