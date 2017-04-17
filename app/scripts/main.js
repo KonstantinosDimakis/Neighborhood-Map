@@ -75,13 +75,143 @@
     window.map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 40.7413549, lng: -73.99802439999996},
       zoom: 13,
-      /**
-       * You can style a google map however you like. Roads, Parks, Water etc..
-       * Free styles: https://snazzymaps.com/
-       * https://developers.google.com/maps/documentation/javascript/styling
-       * https://developers.google.com/maps/documentation/javascript/reference#MapTypeStyle
-       */
-      styles: [],
+      // Style by: Sam Herbert, on: https://snazzymaps.com/style/44/mapbox
+      styles: [
+        {
+          featureType: 'water',
+          stylers: [
+            {
+              saturation: 43
+            },
+            {
+              lightness: -11
+            },
+            {
+              hue: '#0088ff'
+            }
+          ]
+        },
+        {
+          featureType: 'road',
+          elementType: 'geometry.fill',
+          stylers: [
+            {
+              hue: '#ff0000'
+            },
+            {
+              saturation: -100
+            },
+            {
+              lightness: 99
+            }
+          ]
+        },
+        {
+          featureType: 'road',
+          elementType: 'geometry.stroke',
+          stylers: [
+            {
+              color: '#808080'
+            },
+            {
+              lightness: 54
+            }
+          ]
+        },
+        {
+          featureType: 'landscape.man_made',
+          elementType: 'geometry.fill',
+          stylers: [
+            {
+              color: '#ece2d9'
+            }
+          ]
+        },
+        {
+          featureType: 'poi.park',
+          elementType: 'geometry.fill',
+          stylers: [
+            {
+              color: '#ccdca1'
+            }
+          ]
+        },
+        {
+          featureType: 'road',
+          elementType: 'labels.text.fill',
+          stylers: [
+            {
+              color: '#767676'
+            }
+          ]
+        },
+        {
+          featureType: 'road',
+          elementType: 'labels.text.stroke',
+          stylers: [
+            {
+              color: '#ffffff'
+            }
+          ]
+        },
+        {
+          featureType: 'poi',
+          stylers: [
+            {
+              visibility: 'off'
+            }
+          ]
+        },
+        {
+          featureType: 'landscape.natural',
+          elementType: 'geometry.fill',
+          stylers: [
+            {
+              visibility: 'on'
+            },
+            {
+              color: '#b8cb93'
+            }
+          ]
+        },
+        {
+          featureType: 'poi.park',
+          stylers: [
+            {
+              visibility: 'on'
+            }
+          ]
+        },
+        {
+          featureType: 'poi.sports_complex',
+          stylers: [
+            {
+              visibility: 'on'
+            }
+          ]
+        },
+        {
+          featureType: 'poi.medical',
+          stylers: [
+            {
+              visibility: 'on'
+            }
+          ]
+        },
+        {
+          featureType: 'poi.business',
+          stylers: [
+            {
+              visibility: 'off'
+            }
+          ]
+        },
+        {
+          featureType: 'transit',
+          elementType: 'labels.icon',
+          stylers: [{visibility: 'off'}]
+        }
+      ],
       /**
        * Allows the user to adjust the map to road, satellite, terrain etc
        */
