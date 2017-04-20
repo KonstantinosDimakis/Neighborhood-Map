@@ -36,6 +36,21 @@
     <link rel="canonical" href="http://www.example.com/">
     -->
 
+    <!--Load Roboto Fonts async-->
+    <script>
+      WebFontConfig = {
+        google: {
+          families: ['Roboto:300,400,500,700']
+        }
+      };
+      (function(d) {
+        var wf = d.createElement('script'), s = d.scripts[0];
+        wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+        wf.async = true;
+        s.parentNode.insertBefore(wf, s);
+      })(document);
+    </script>
+
     <!-- Material Design Lite page styles:
     You can choose other color schemes from the CDN, more info here http://www.getmdl.io/customize/index.html
     Format: material.color1-color2.min.css, some examples:
@@ -48,7 +63,7 @@
     <!-- Your styles -->
     <link rel="stylesheet" href="styles/main.css">
   </head>
-  <body class="mdl-color--grey-100 mdl-color-text--white">
+  <body class="mdl-color-text--primary-contrast">
     <main class="mdl-layout mdl-js-layout">
       <section id="map"></section>
     </main>
