@@ -215,3 +215,21 @@ html, body {
 #map {
   height: 100%;
 }
+
+.app-filterbox .app-filterbox--input {
+  border: none;
+  outline: none;
+  /*photo 24px + (8 * 2)px = 40px*/
+  width: calc(100% - 40px);
+}
+
+#filterbox {
+  position: absolute;
+  left: 1%;
+  right: 1%;
+  top: 1%;
+}
+
+.app-filterbox .app-filterbox--icon {
+  margin: 4px 8px;
+}

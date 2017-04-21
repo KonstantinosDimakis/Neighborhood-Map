@@ -66,6 +66,11 @@
   <body class="mdl-color-text--primary-contrast">
     <main class="mdl-layout mdl-js-layout">
       <section id="map"></section>
+      <section id="filterbox" class="app-filterbox mdl-grid mdl-color--primary-contrast mdl-shadow--4dp">
+        <img id="filterbox--icon" class="app-filterbox--icon" src="images/filter_list_black_24px.svg" alt="Filter">
+        <div class="mdl-tooltip" data-mdl-for="filterbox--icon">Filter</div>
+        <input id="filterbox--input" class="app-filterbox--input" type="text" placeholder="Burger, Cocktail, Starbucks etc...">
+      </section>
     </main>
 
     <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
