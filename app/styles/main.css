@@ -57,31 +57,42 @@ html, body {
   height: 150px;
 }
 
-.mdl-list--scrollable-x .mdl-card {
+#locations-list .mdl-card {
   width: 120px;
-  flex-shrink: 0;
 }
 
-.mdl-list--scrollable-x .mdl-card:not(:first-child) {
+#locations-list .mdl-card:not(:first-child) {
   margin-left: 8px;
 }
 
-.mdl-list--scrollable-x {
+/* Scrollable (scrlb) Library */
+
+.scrlb-content--x .scrlb-content__item {
+  flex-shrink: 0;
+}
+
+.scrlb-content--y .scrlb-content__item {
+  flex-shrink: 0;
+}
+
+.scrlb-content--x {
   display: flex;
   flex-direction: row;
   overflow-x: auto;
 }
 
-.mdl-list--scrollable-x::-webkit-scrollbar {
-  display: none;
-}
-
-.mdl-list--scrollable-y {
+.scrlb-content--y {
   display: flex;
   flex-direction: column;
   overflow-y: auto;
 }
 
-.mdl-list--scrollable-y::-webkit-scrollbar {
+.scrlb-content--x::-webkit-scrollbar {
   display: none;
 }
+
+.scrlb-content--y::-webkit-scrollbar {
+  display: none;
+}
+
+/******************************/
