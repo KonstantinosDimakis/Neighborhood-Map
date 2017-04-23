@@ -61,10 +61,6 @@ html, body {
   width: 120px;
 }
 
-#locations-list .mdl-card:not(:first-child) {
-  margin-left: 8px;
-}
-
 /* Scrollable (scrlb) Library */
 
 .scrlb-content--x .scrlb-content__item {
