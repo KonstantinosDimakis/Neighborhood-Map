@@ -72,14 +72,16 @@
     });
   }
   // Retrieve API data
-  $.getJSON('https://api.foursquare.com/v2/venues/search?', {
+  $.getJSON('https://api.foursquare.com/v2/venues/explore?', {
     client_id: 'DZLWV3OVTRDIJ4A3HYBWIHZLHNPPWSPULWU0MOIUPV4UGD0B',
     client_secret: 'MFMOIF4BD4H0K3ULA41LF2WD5SK0KRJAQLTUZT4VV3XVGC0O',
     ll: '38.464576,23.600043',
-    v: '20170425'
+    v: '20170425',
+    venuePhotos: '1',
   }, function(data) {
     console.log(data);
-    // https://api.foursquare.com/v2/venues/search?&client_id=DZLWV3OVTRDIJ4A3HYBWIHZLHNPPWSPULWU0MOIUPV4UGD0B&client_secret=MFMOIF4BD4H0K3ULA41LF2WD5SK0KRJAQLTUZT4VV3XVGC0O&ll=38.464576%2C23.600043&v=20170425
+    // https://developer.foursquare.com/docs/venues/explore
+    // https://api.foursquare.com/v2/venues/search?&venuePhotos=1&client_id=DZLWV3OVTRDIJ4A3HYBWIHZLHNPPWSPULWU0MOIUPV4UGD0B&client_secret=MFMOIF4BD4H0K3ULA41LF2WD5SK0KRJAQLTUZT4VV3XVGC0O&ll=38.464576%2C23.600043&v=20170425
   });
 
   // Initialize markers array from data
