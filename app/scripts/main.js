@@ -72,16 +72,52 @@
     });
   }
   // Retrieve API data
+  // https://developer.foursquare.com/docs/venues/explore
+  // https://api.foursquare.com/v2/venues/explore?&venuePhotos=1&client_id=DZLWV3OVTRDIJ4A3HYBWIHZLHNPPWSPULWU0MOIUPV4UGD0B&client_secret=MFMOIF4BD4H0K3ULA41LF2WD5SK0KRJAQLTUZT4VV3XVGC0O&ll=38.464576%2C23.600043&v=20170425
+  const FOURSQUARE_CLIENT_ID = 'DZLWV3OVTRDIJ4A3HYBWIHZLHNPPWSPULWU0MOIUPV4UGD0B';
+  const FOURSQUARE_CLIENT_SECRET = 'MFMOIF4BD4H0K3ULA41LF2WD5SK0KRJAQLTUZT4VV3XVGC0O';
+  var veneus = [];
   $.getJSON('https://api.foursquare.com/v2/venues/explore?', {
-    client_id: 'DZLWV3OVTRDIJ4A3HYBWIHZLHNPPWSPULWU0MOIUPV4UGD0B',
-    client_secret: 'MFMOIF4BD4H0K3ULA41LF2WD5SK0KRJAQLTUZT4VV3XVGC0O',
+    client_id: FOURSQUARE_CLIENT_ID,
+    client_secret: FOURSQUARE_CLIENT_SECRET,
     ll: '38.464576,23.600043',
     v: '20170425',
-    venuePhotos: '1',
+    venuePhotos: '1'
   }, function(data) {
-    console.log(data);
-    // https://developer.foursquare.com/docs/venues/explore
-    // https://api.foursquare.com/v2/venues/search?&venuePhotos=1&client_id=DZLWV3OVTRDIJ4A3HYBWIHZLHNPPWSPULWU0MOIUPV4UGD0B&client_secret=MFMOIF4BD4H0K3ULA41LF2WD5SK0KRJAQLTUZT4VV3XVGC0O&ll=38.464576%2C23.600043&v=20170425
+    for (let item of data.response.groups[0].items) {
+      let venue = {
+        name: item.venue.name,
+        foursquare: 'https://foursquare.com/v/' + item.venue.id + '?ref=' + FOURSQUARE_CLIENT_ID,
+        location: {lat: item.venue.location.lat, lng: item.venue.location.lng},
+        distance: item.venue.location.distance,
+        address: item.venue.location.address,
+        rating: item.venue.rating,
+        icon: item.venue.categories[0].icon.prefix + '32' + item.venue.categories[0].icon.suffix,
+        category: {
+          name: item.venue.categories[0].name,
+          tag: item.venue.categories[0].shortName
+        },
+        photo: item.venue.featuredPhotos.items[0].prefix + 'original' + item.venue.featuredPhotos.items[0].suffix,
+      };
+      // filter through non-standard information
+      if (item.venue.contact.phone) {
+        venue.phone = item.venue.contact.phone;
+      }
+      if (item.venue.contact.facebook) {
+        venue.facebook = 'https://www.facebook.com/' + item.venue.contact.facebook;
+      }
+      if (item.venue.price) {
+        venue.price = item.venue.price.tier;
+      }
+      if (item.venue.hours) {
+        venue.isOpen = item.venue.hours.isOpen;
+      }
+      if (item.venue.url) {
+        venue.url = item.venue.url;
+      }
+      veneus.push(venue);
+    }
+    console.log(veneus);
   });
 
   // Initialize markers array from data
