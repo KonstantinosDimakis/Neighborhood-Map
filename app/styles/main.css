@@ -50,15 +50,19 @@ html, body {
   outline: none;
 }
 
-/* Card Section */
+/* Cards Section */
 
-.mdl-card .mdl-card__background {
-  background: url('http://animalnewyork.com/wp-content/uploads/rate_every_starbucks_new_york.jpg') center / cover;
-  height: 150px;
+.mdl-venue-card {
+  flex-direction: column;
+  flex-wrap: nowrap;
 }
 
-#locations-list .mdl-card {
-  width: 120px;
+.mdl-venue-card .mdl-venue-card__title {
+  margin: 0;
+}
+
+.mdl-venue-card .mdl-venue-card__category{
+  margin: 0;
 }
 
 /* Scrollable (scrlb) Library */
