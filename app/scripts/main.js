@@ -76,7 +76,7 @@
   // https://api.foursquare.com/v2/venues/explore?&venuePhotos=1&client_id=DZLWV3OVTRDIJ4A3HYBWIHZLHNPPWSPULWU0MOIUPV4UGD0B&client_secret=MFMOIF4BD4H0K3ULA41LF2WD5SK0KRJAQLTUZT4VV3XVGC0O&ll=38.464576%2C23.600043&v=20170425
   const FOURSQUARE_CLIENT_ID = 'DZLWV3OVTRDIJ4A3HYBWIHZLHNPPWSPULWU0MOIUPV4UGD0B';
   const FOURSQUARE_CLIENT_SECRET = 'MFMOIF4BD4H0K3ULA41LF2WD5SK0KRJAQLTUZT4VV3XVGC0O';
-  var veneus = [];
+  var venues = [];
   $.getJSON('https://api.foursquare.com/v2/venues/explore?', {
     client_id: FOURSQUARE_CLIENT_ID,
     client_secret: FOURSQUARE_CLIENT_SECRET,
@@ -115,9 +115,9 @@
       if (item.venue.url) {
         venue.url = item.venue.url;
       }
-      veneus.push(venue);
+      venues.push(venue);
     }
-    console.log(veneus);
+    console.log(venues);
   });
 
   // Initialize markers array from data
