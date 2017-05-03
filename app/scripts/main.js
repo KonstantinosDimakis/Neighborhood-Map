@@ -91,7 +91,7 @@
         location: {lat: item.venue.location.lat, lng: item.venue.location.lng},
         distance: item.venue.location.distance,
         address: item.venue.location.address,
-        rating: item.venue.rating,
+        rating: Math.round(item.venue.rating) / 2,
         icon: item.venue.categories[0].icon.prefix + '64' + item.venue.categories[0].icon.suffix,
         category: {
           name: item.venue.categories[0].name,
