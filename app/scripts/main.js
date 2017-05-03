@@ -118,6 +118,8 @@
       venues.push(venue);
     }
     console.log(venues);
+  }).fail(function() {
+    // TODO: Add a proper fail message
   });
 
   // Initialize markers array from data
