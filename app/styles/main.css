@@ -52,9 +52,14 @@ html, body {
 
 /* Cards Section */
 
+#locations-list {
+  min-height: 110px;
+}
+
 .mdl-venue-card {
   flex-direction: column;
   flex-wrap: nowrap;
+  width: 180px;
 }
 
 .mdl-venue-card .mdl-venue-card__title {
