@@ -129,7 +129,11 @@
    * @param {Array} markers Markers Array
    * @param {google.maps.Map} map Google Map
    */
-  window.populateMarkersOnMap = function(markers, map) {};
+  window.populateMarkersOnMap = function(markers, map) {
+    for (var marker of markers) {
+      marker.setMap(map);
+    }
+  };
   window.initMap = function() {
     window.map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 40.7413549, lng: -73.99802439999996},
@@ -280,7 +284,5 @@
     setTimeout(function() {
       google.maps.event.trigger(map, 'resize');
     }, 1500);
-    // One global InfoWindow at a time
-    window.infowindow = new google.maps.InfoWindow();
   };
 })();
