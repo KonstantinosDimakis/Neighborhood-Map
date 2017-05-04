@@ -62,6 +62,9 @@ html, body {
 }
 
 .mdl-venue-card .mdl-venue-card__title {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   margin: 0;
 }
 
