@@ -74,7 +74,7 @@ html, body {
 
 /* Venue Details */
 
-#venue-details {
+#venue-details__container {
   height: 800px;
 }
 
