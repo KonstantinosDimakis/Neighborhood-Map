@@ -78,6 +78,11 @@ html, body {
   height: 800px;
 }
 
+#venue-details__close-button {
+  position: absolute;
+  right: 0;
+}
+
 /* Scrollable (scrlb) Library */
 
 .scrlb-content--x .scrlb-content__item {
