@@ -57,9 +57,8 @@ html, body {
 }
 
 .mdl-venue-card {
-  flex-direction: column;
-  flex-wrap: nowrap;
   width: 180px;
+  padding: 8px !important;
 }
 
 .mdl-venue-card .mdl-venue-card__title {
