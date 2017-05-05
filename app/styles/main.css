@@ -75,7 +75,16 @@ html, body {
 /* Venue Details */
 
 #venue-details__container {
+  height: 0;
+  opacity: 0;
+  display: none;
+}
+
+#venue-details__container.active {
+  display: block;
+  opacity: 1;
   height: 800px;
+  transition: all 0.2s ease-in-out;
 }
 
 #venue-details__close-button {
