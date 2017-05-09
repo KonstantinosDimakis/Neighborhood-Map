@@ -79,6 +79,7 @@ html, body {
 
 /* Venue Details */
 
+/* Venue Details Animation */
 #venue-details__container {
   height: 0;
   opacity: 0;
@@ -88,13 +89,20 @@ html, body {
 #venue-details__container.active {
   display: block;
   opacity: 1;
-  height: 800px;
+  height: auto;
   transition: all 0.2s ease-in-out;
 }
 
-#venue-details__close-button {
-  position: absolute;
-  right: 0;
+/* END Venue Details Animation */
+
+#venue-details {
+  border-radius: 0;
+  width: 100%;
+}
+
+#venue-details .venue-details__media {
+  background-size: cover;
+  height: 200px;
 }
 
 /* Scrollable (scrlb) Library */
