@@ -105,6 +105,32 @@ html, body {
   height: 200px;
 }
 
+#venue-details__header {
+  flex-flow: row wrap;
+}
+
+#venue-details__header--title {
+  flex:  1 0 100%;
+}
+
+#venue-details__header--rating {
+  display: flex;
+  flex-flow: row wrap;
+  flex:  1 0 100%;
+}
+
+#venue-details__header--rating-number {
+  margin-right: 8px;
+}
+
+#venue-details__header--category {
+  flex:  1 0 100%;
+}
+
+#venue-details__header > *:not(:first-child) {
+  margin-top: 8px;
+}
+
 /* Scrollable (scrlb) Library */
 
 .scrlb-content--x .scrlb-content__item {
