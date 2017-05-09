@@ -54,6 +54,11 @@ html, body {
 
 #venues-cards {
   min-height: 110px;
+  display: none;
+}
+
+#venue-cards.active {
+  display: block;
 }
 
 .mdl-venue-card {
