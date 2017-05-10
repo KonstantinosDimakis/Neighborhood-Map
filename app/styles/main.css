@@ -19,6 +19,8 @@ Note: any .css or .scss files included in the 'styles' directory
 will be correctly compiled during `gulp serve` and `gulp`
  */
 
+/*TODO: Breakup css to many files*/
+
 html, body {
   font-family: 'Roboto', 'Helvetica', sans-serif;
   margin: 0;
@@ -100,6 +102,16 @@ html, body {
   width: 100%;
 }
 
+#venue-details a,
+a:link,
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
+  text-decoration: inherit;
+  font-weight: inherit;
+}
+
 #venue-details .venue-details__media {
   background-size: cover;
   height: 200px;
@@ -114,12 +126,29 @@ html, body {
 }
 
 #venue-details__header--rating {
+  align-items: center;
   display: flex;
   flex-flow: row wrap;
   flex:  1 0 100%;
 }
 
 #venue-details__header--rating-number {
+  margin-right: 8px;
+}
+
+#venue-details .mdl-card--border {
+  border-top: 1px solid rgba(0,0,0,.1)
+}
+
+#venue-details .venue-details__supporting-information {
+  width: 100%;
+}
+
+#venue-details .venue-details__supporting-information .venue-details__supporting-information--text {
+  color: rgba(0,0,0,.87);
+}
+
+#venue-details .venue-details__supporting-information .venue-details__supporting-information--icon {
   margin-right: 8px;
 }
 
