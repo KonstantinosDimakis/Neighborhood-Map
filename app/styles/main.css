@@ -131,6 +131,12 @@ html, body {
   margin-top: 8px;
 }
 
+#venue-details__actions {
+  justify-content: space-around;
+  display: flex;
+  flex-flow: row wrap;
+}
+
 /* Scrollable (scrlb) Library */
 
 .scrlb-content--x .scrlb-content__item {
