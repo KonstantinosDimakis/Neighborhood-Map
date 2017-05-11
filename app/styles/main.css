@@ -81,22 +81,6 @@ html, body {
 
 /* Venue Details */
 
-/* Venue Details Animation */
-#venue-details__container {
-  height: 0;
-  opacity: 0;
-  display: none;
-}
-
-#venue-details__container.active {
-  display: block;
-  opacity: 1;
-  height: auto;
-  transition: all 0.2s ease-in-out;
-}
-
-/* END Venue Details Animation */
-
 #venue-details {
   border-radius: 0;
   width: 100%;
