@@ -1,0 +1,9 @@
+.unstyled-a a,
+.unstyled-a a:link,
+.unstyled-a a:visited,
+.unstyled-a a:hover,
+.unstyled-a a:active {
+  color: inherit;
+  text-decoration: inherit;
+  font-weight: inherit;
+}

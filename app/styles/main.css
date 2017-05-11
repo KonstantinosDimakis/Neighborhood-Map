@@ -86,16 +86,6 @@ html, body {
   width: 100%;
 }
 
-#venue-details a,
-a:link,
-a:visited,
-a:hover,
-a:active {
-  color: inherit;
-  text-decoration: inherit;
-  font-weight: inherit;
-}
-
 #venue-details .venue-details__media {
   background-size: cover;
   height: 200px;
