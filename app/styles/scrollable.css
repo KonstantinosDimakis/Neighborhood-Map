@@ -1,36 +1,38 @@
-.scrlb-content--x .scrlb-content__item {
+/* Necessary to keep custom widths */
+.scrlb-content--x > * {
   flex-shrink: 0;
 }
 
-.scrlb-content--y .scrlb-content__item {
+/* Necessary to keep custom heights */
+.scrlb-content--y > * {
   flex-shrink: 0;
 }
 
-.scrlb-content--x-margin-2dp .scrlb-content__item:not(:first-child) {
+.scrlb-content--x-margin-2dp > *:not(:first-child) {
   margin-left: 2px;
 }
 
-.scrlb-content--x-margin-3dp .scrlb-content__item:not(:first-child) {
+.scrlb-content--x-margin-3dp > *:not(:first-child) {
   margin-left: 3px;
 }
 
-.scrlb-content--x-margin-4dp .scrlb-content__item:not(:first-child) {
+.scrlb-content--x-margin-4dp > *:not(:first-child) {
   margin-left: 4px;
 }
 
-.scrlb-content--x-margin-6dp .scrlb-content__item:not(:first-child) {
+.scrlb-content--x-margin-6dp > *:not(:first-child) {
   margin-left: 6px;
 }
 
-.scrlb-content--x-margin-8dp .scrlb-content__item:not(:first-child) {
+.scrlb-content--x-margin-8dp > *:not(:first-child) {
   margin-left: 8px;
 }
 
-.scrlb-content--x-margin-16dp .scrlb-content__item:not(:first-child) {
+.scrlb-content--x-margin-16dp > *:not(:first-child) {
   margin-left: 16px;
 }
 
-.scrlb-content--x-margin-24dp .scrlb-content__item:not(:first-child) {
+.scrlb-content--x-margin-24dp > *:not(:first-child) {
   margin-left: 24px;
 }
 
