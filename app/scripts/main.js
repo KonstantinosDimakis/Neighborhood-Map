@@ -241,9 +241,10 @@
         },
         {
           featureType: 'poi.park',
+          elementType: 'labels',
           stylers: [
             {
-              visibility: 'on'
+              visibility: 'off'
             }
           ]
         },
@@ -251,7 +252,7 @@
           featureType: 'poi.sports_complex',
           stylers: [
             {
-              visibility: 'on'
+              visibility: 'off'
             }
           ]
         },
@@ -259,7 +260,7 @@
           featureType: 'poi.medical',
           stylers: [
             {
-              visibility: 'on'
+              visibility: 'off'
             }
           ]
         },
