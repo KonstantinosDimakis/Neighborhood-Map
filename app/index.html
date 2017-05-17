@@ -80,12 +80,11 @@
   <body>
     <main class="mdl-layout mdl-js-layout">
       <section id="map"></section>
-      <section id="filterbox" class="mdl-filterbox mdl-grid mdl-color--primary-contrast mdl-shadow--4dp">
-        <img id="filterbox__icon" class="mdl-filterbox__icon" src="images/filter_list_black_24px.svg" alt="Filter">
-        <div class="mdl-tooltip" data-mdl-for="filterbox__icon">Filter</div>
-        <input id="filterbox__input" class="mdl-filterbox__input" type="text" placeholder="Burger, Cocktail, Starbucks etc...">
+      <section id="filterbox" class="mdl-filterbox mdl-color--primary-contrast mdl-shadow--4dp">
+        <img title="Filter" class="mdl-filterbox__icon" src="images/filter_list_black_24px.svg" alt="Filter">
+        <input data-bind="textInput: filter" class="mdl-filterbox__input" placeholder="Burger, Bar, Starbucks etc...">
       </section>
-      <section class="drawer active">
+      <section class="drawer">
         <article id="venue-details" class="mdl-card unstyled-a">
           <section class="mdl-card__media venue-details__media" style="background-image: url('https://igx.4sqi.net/img/general/original/55375453_KUlAQXJW64L8SiUt5aJtBjZTMlwfEWiSiNznZUZc6YY.jpg')"></section>
           <header id="venue-details__header" class="mdl-card__title mdl-card--expand mdl-color-text--primary-contrast mdl-color--primary">
@@ -153,7 +152,7 @@
           </section>
         </article>
       </section>
-      <section id="venues-cards" class="scrlb-content--x scrlb-content--x-margin-8dp">
+      <section id="venues-cards" class="active scrlb-content--x scrlb-content--x-margin-8dp">
         <article class="mdl-grid mdl-grid--no-spacing mdl-venue-card mdl-shadow--4dp mdl-color--primary-contrast">
           <h3 class="mdl-typography--title mdl-venue-card__title mdl-cell mdl-cell--12-col">Body & Soul</h3>
           <section class="mdl-cell mdl-cell--12-col">
@@ -176,14 +175,14 @@
         </article>
       </section>
     </main>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/viewModel.js"></script>
     <script
       src="https://code.jquery.com/jquery-3.2.1.min.js"
       integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
       crossorigin="anonymous"></script>
     <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAY3JZUU5wWuZzfJQXNViKoZ8baXhfTLS0&callback=initMap"></script>
-    <script src="scripts/main.js"></script>
     <!-- Built with love using Web Starter Kit -->
   </body>
 </html>

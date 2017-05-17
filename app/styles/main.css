@@ -31,6 +31,12 @@ html, body {
 
 /* Filterbox */
 
+.mdl-filterbox {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 12px 8px;
+}
+
 .mdl-filterbox .mdl-filterbox__input {
   border: none;
   outline: none;
@@ -38,16 +44,16 @@ html, body {
   width: calc(100% - 40px);
 }
 
+.mdl-filterbox .mdl-filterbox__icon {
+  margin: 0 8px;
+  outline: none;
+}
+
 #filterbox {
   position: absolute;
   left: 1%;
   right: 1%;
   top: 1%;
-}
-
-.mdl-filterbox .mdl-filterbox__icon {
-  margin: 4px 8px;
-  outline: none;
 }
 
 /* Venue Cards */
