@@ -152,24 +152,20 @@
           </section>
         </article>
       </section>
-      <section id="venues-cards" class="active scrlb-content--x scrlb-content--x-margin-8dp">
+      <section data-bind="foreach: venues" id="venues-cards" class="active scrlb-content--x scrlb-content--x-margin-8dp">
         <article class="mdl-grid mdl-grid--no-spacing mdl-venue-card mdl-shadow--4dp mdl-color--primary-contrast">
-          <h3 class="mdl-typography--title mdl-venue-card__title mdl-cell mdl-cell--12-col">Body & Soul</h3>
-          <section class="mdl-cell mdl-cell--12-col">
-            <img src="images/star_black_18px.svg" alt="Star">
-            <img src="images/star_black_18px.svg" alt="Star">
-            <img src="images/star_black_18px.svg" alt="Star">
-            <img src="images/star_half_black_18px.svg" alt="Star">
-            <img src="images/star_border_black_18px.svg" alt="Star">
+          <h3 data-bind="text: name" class="mdl-typography--title mdl-venue-card__title mdl-cell mdl-cell--12-col"></h3>
+          <section data-bind="foreach: rating.stars" class="mdl-cell mdl-cell--12-col">
+            <img data-bind="attr: {src: $data}" alt="Star">
           </section>
           <section class="mdl-color-text--grey-600 mdl-cell mdl-cell--12-col">
             <img src="images/location_gray_24px.svg" alt="Distance">
-            <span class="mdl-typography--subhead">462m</span>
+            <span data-bind="text: distance" class="mdl-typography--subhead"></span>
           </section>
           <section class="mdl-cell mdl-cell--12-col">
             <span class="mdl-venue-card__category mdl-chip mdl-chip--contact">
-              <img class="mdl-chip__contact mdl-color--primary" src="https://ss3.4sqi.net/img/categories_v2/building/gym_32.png">
-              <span class="mdl-chip__text">Gym</span>
+              <img data-bind="attr : {src: icon}" class="mdl-chip__contact mdl-color--primary">
+              <span data-bind="text: category.tag" class="mdl-chip__text"></span>
             </span>
           </section>
         </article>
