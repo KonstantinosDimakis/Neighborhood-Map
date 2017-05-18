@@ -70,7 +70,8 @@ var data = [
     category: {
       tag: 'Gym'
     }
-  },  {
+  },
+  {
     name: 'Zouzhs',
     distance: '492',
     rating: {
@@ -87,8 +88,8 @@ var data = [
     category: {
       tag: 'Gym'
     }
-  }
-  ,  {
+  },
+  {
     name: 'Zouzhs',
     distance: '492',
     rating: {
