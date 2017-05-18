@@ -93,7 +93,16 @@
         location: {lat: item.venue.location.lat, lng: item.venue.location.lng},
         distance: item.venue.location.distance,
         address: item.venue.location.address,
-        rating: Math.round(item.venue.rating) / 2,
+        rating: {
+          number: Math.round(item.venue.rating) / 2,
+          stars: [
+            'images/star_border_black_18px.svg',
+            'images/star_border_black_18px.svg',
+            'images/star_border_black_18px.svg',
+            'images/star_border_black_18px.svg',
+            'images/star_border_black_18px.svg'
+          ]
+        },
         icon: item.venue.categories[0].icon.prefix + '64' + item.venue.categories[0].icon.suffix,
         category: {
           name: item.venue.categories[0].name,
@@ -101,6 +110,14 @@
         },
         photo: item.venue.featuredPhotos.items[0].prefix + 'original' + item.venue.featuredPhotos.items[0].suffix,
       };
+      // fix rating.stars
+      var i;
+      for (i = 0; i < Math.floor(venue.rating.number); i++) {
+        venue.rating.stars[i] = 'images/star_black_18px.svg';
+      }
+      if (venue.rating.number % 1 !== 0) {
+        venue.rating.stars[i] = 'images/star_half_black_18px.svg';
+      }
       // filter through non-standard information
       if (item.venue.contact.phone) {
         venue.phone = item.venue.contact.phone;
