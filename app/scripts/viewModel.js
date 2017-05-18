@@ -5,11 +5,11 @@ var data = [
     rating: {
       number: 3.5,
       stars: [
-        'images/star_black_18px.svg',
-        'images/star_black_18px.svg',
-        'images/star_black_18px.svg',
-        'images/star_border_black_18px.svg',
-        'images/star_border_black_18px.svg'
+        'images/star_yellow_18px.svg',
+        'images/star_yellow_18px.svg',
+        'images/star_yellow_18px.svg',
+        'images/star_border_yellow_18px.svg',
+        'images/star_border_yellow_18px.svg'
       ]
     },
     icon: 'https://ss3.4sqi.net/img/categories_v2/building/gym_32.png',
@@ -23,11 +23,11 @@ var data = [
     rating: {
       number: 3.5,
       stars: [
-        'images/star_black_18px.svg',
-        'images/star_black_18px.svg',
-        'images/star_black_18px.svg',
-        'images/star_half_black_18px.svg',
-        'images/star_border_black_18px.svg'
+        'images/star_yellow_18px.svg',
+        'images/star_yellow_18px.svg',
+        'images/star_yellow_18px.svg',
+        'images/star_half_yellow_18px.svg',
+        'images/star_border_yellow_18px.svg'
       ]
     },
     icon: 'https://ss3.4sqi.net/img/categories_v2/building/gym_32.png',
@@ -41,11 +41,11 @@ var data = [
     rating: {
       number: 3.5,
       stars: [
-        'images/star_black_18px.svg',
-        'images/star_black_18px.svg',
-        'images/star_black_18px.svg',
-        'images/star_half_black_18px.svg',
-        'images/star_border_black_18px.svg'
+        'images/star_yellow_18px.svg',
+        'images/star_yellow_18px.svg',
+        'images/star_yellow_18px.svg',
+        'images/star_half_yellow_18px.svg',
+        'images/star_border_yellow_18px.svg'
       ]
     },
     icon: 'https://ss3.4sqi.net/img/categories_v2/building/gym_32.png',
@@ -59,11 +59,11 @@ var data = [
     rating: {
       number: 3.5,
       stars: [
-        'images/star_black_18px.svg',
-        'images/star_black_18px.svg',
-        'images/star_black_18px.svg',
-        'images/star_half_black_18px.svg',
-        'images/star_border_black_18px.svg'
+        'images/star_yellow_18px.svg',
+        'images/star_yellow_18px.svg',
+        'images/star_yellow_18px.svg',
+        'images/star_half_yellow_18px.svg',
+        'images/star_border_yellow_18px.svg'
       ]
     },
     icon: 'https://ss3.4sqi.net/img/categories_v2/building/gym_32.png',
@@ -76,11 +76,11 @@ var data = [
     rating: {
       number: 3.5,
       stars: [
-        'images/star_black_18px.svg',
-        'images/star_black_18px.svg',
-        'images/star_black_18px.svg',
-        'images/star_half_black_18px.svg',
-        'images/star_border_black_18px.svg'
+        'images/star_yellow_18px.svg',
+        'images/star_yellow_18px.svg',
+        'images/star_yellow_18px.svg',
+        'images/star_half_yellow_18px.svg',
+        'images/star_border_yellow_18px.svg'
       ]
     },
     icon: 'https://ss3.4sqi.net/img/categories_v2/building/gym_32.png',
@@ -94,11 +94,11 @@ var data = [
     rating: {
       number: 3.5,
       stars: [
-        'images/star_black_18px.svg',
-        'images/star_black_18px.svg',
-        'images/star_black_18px.svg',
-        'images/star_half_black_18px.svg',
-        'images/star_border_black_18px.svg'
+        'images/star_yellow_18px.svg',
+        'images/star_yellow_18px.svg',
+        'images/star_yellow_18px.svg',
+        'images/star_half_yellow_18px.svg',
+        'images/star_border_yellow_18px.svg'
       ]
     },
     icon: 'https://ss3.4sqi.net/img/categories_v2/building/gym_32.png',
@@ -112,11 +112,11 @@ var data = [
     rating: {
       number: 3.5,
       stars: [
-        'images/star_black_18px.svg',
-        'images/star_black_18px.svg',
-        'images/star_black_18px.svg',
-        'images/star_half_black_18px.svg',
-        'images/star_border_black_18px.svg'
+        'images/star_yellow_18px.svg',
+        'images/star_yellow_18px.svg',
+        'images/star_yellow_18px.svg',
+        'images/star_half_yellow_18px.svg',
+        'images/star_border_yellow_18px.svg'
       ]
     },
     icon: 'https://ss3.4sqi.net/img/categories_v2/building/gym_32.png',
@@ -130,11 +130,11 @@ var data = [
     rating: {
       number: 3.5,
       stars: [
-        'images/star_black_18px.svg',
-        'images/star_black_18px.svg',
-        'images/star_black_18px.svg',
-        'images/star_half_black_18px.svg',
-        'images/star_border_black_18px.svg'
+        'images/star_yellow_18px.svg',
+        'images/star_yellow_18px.svg',
+        'images/star_yellow_18px.svg',
+        'images/star_half_yellow_18px.svg',
+        'images/star_border_yellow_18px.svg'
       ]
     },
     icon: 'https://ss3.4sqi.net/img/categories_v2/building/gym_32.png',
@@ -148,11 +148,11 @@ var data = [
     rating: {
       number: 3.5,
       stars: [
-        'images/star_black_18px.svg',
-        'images/star_black_18px.svg',
-        'images/star_black_18px.svg',
-        'images/star_half_black_18px.svg',
-        'images/star_border_black_18px.svg'
+        'images/star_yellow_18px.svg',
+        'images/star_yellow_18px.svg',
+        'images/star_yellow_18px.svg',
+        'images/star_half_yellow_18px.svg',
+        'images/star_border_yellow_18px.svg'
       ]
     },
     icon: 'https://ss3.4sqi.net/img/categories_v2/building/gym_32.png',
@@ -166,11 +166,11 @@ var data = [
     rating: {
       number: 3.5,
       stars: [
-        'images/star_black_18px.svg',
-        'images/star_black_18px.svg',
-        'images/star_black_18px.svg',
-        'images/star_half_black_18px.svg',
-        'images/star_border_black_18px.svg'
+        'images/star_yellow_18px.svg',
+        'images/star_yellow_18px.svg',
+        'images/star_yellow_18px.svg',
+        'images/star_half_yellow_18px.svg',
+        'images/star_border_yellow_18px.svg'
       ]
     },
     icon: 'https://ss3.4sqi.net/img/categories_v2/building/gym_32.png',
@@ -184,11 +184,11 @@ var data = [
     rating: {
       number: 3.5,
       stars: [
-        'images/star_black_18px.svg',
-        'images/star_black_18px.svg',
-        'images/star_black_18px.svg',
-        'images/star_half_black_18px.svg',
-        'images/star_border_black_18px.svg'
+        'images/star_yellow_18px.svg',
+        'images/star_yellow_18px.svg',
+        'images/star_yellow_18px.svg',
+        'images/star_half_yellow_18px.svg',
+        'images/star_border_yellow_18px.svg'
       ]
     },
     icon: 'https://ss3.4sqi.net/img/categories_v2/building/gym_32.png',
@@ -202,11 +202,11 @@ var data = [
     rating: {
       number: 3.5,
       stars: [
-        'images/star_black_18px.svg',
-        'images/star_black_18px.svg',
-        'images/star_black_18px.svg',
-        'images/star_half_black_18px.svg',
-        'images/star_border_black_18px.svg'
+        'images/star_yellow_18px.svg',
+        'images/star_yellow_18px.svg',
+        'images/star_yellow_18px.svg',
+        'images/star_half_yellow_18px.svg',
+        'images/star_border_yellow_18px.svg'
       ]
     },
     icon: 'https://ss3.4sqi.net/img/categories_v2/building/gym_32.png',
@@ -220,11 +220,11 @@ var data = [
     rating: {
       number: 3.5,
       stars: [
-        'images/star_black_18px.svg',
-        'images/star_black_18px.svg',
-        'images/star_black_18px.svg',
-        'images/star_half_black_18px.svg',
-        'images/star_border_black_18px.svg'
+        'images/star_yellow_18px.svg',
+        'images/star_yellow_18px.svg',
+        'images/star_yellow_18px.svg',
+        'images/star_half_yellow_18px.svg',
+        'images/star_border_yellow_18px.svg'
       ]
     },
     icon: 'https://ss3.4sqi.net/img/categories_v2/building/gym_32.png',

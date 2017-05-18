@@ -96,11 +96,11 @@
         rating: {
           number: Math.round(item.venue.rating) / 2,
           stars: [
-            'images/star_border_black_18px.svg',
-            'images/star_border_black_18px.svg',
-            'images/star_border_black_18px.svg',
-            'images/star_border_black_18px.svg',
-            'images/star_border_black_18px.svg'
+            'images/star_border_yellow_18px.svg',
+            'images/star_border_yellow_18px.svg',
+            'images/star_border_yellow_18px.svg',
+            'images/star_border_yellow_18px.svg',
+            'images/star_border_yellow_18px.svg'
           ]
         },
         icon: item.venue.categories[0].icon.prefix + '64' + item.venue.categories[0].icon.suffix,
@@ -113,10 +113,10 @@
       // fix rating.stars
       var i;
       for (i = 0; i < Math.floor(venue.rating.number); i++) {
-        venue.rating.stars[i] = 'images/star_black_18px.svg';
+        venue.rating.stars[i] = 'images/star_yellow_18px.svg';
       }
       if (venue.rating.number % 1 !== 0) {
-        venue.rating.stars[i] = 'images/star_half_black_18px.svg';
+        venue.rating.stars[i] = 'images/star_half_yellow_18px.svg';
       }
       // filter through non-standard information
       if (item.venue.contact.phone) {
