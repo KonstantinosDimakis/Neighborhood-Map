@@ -42,6 +42,10 @@
       "node": true,
       "amd": true,
       "jquery": true
+    },
+    "globals": {
+      "ko": true,
+      "google": true
     }
   },
   "dependencies": {}
