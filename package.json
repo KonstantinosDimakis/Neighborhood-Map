@@ -45,7 +45,9 @@
     },
     "globals": {
       "ko": true,
-      "google": true
+      "google": true,
+      "dataModel": true,
+      "viewModel": true
     }
   },
   "dependencies": {}
