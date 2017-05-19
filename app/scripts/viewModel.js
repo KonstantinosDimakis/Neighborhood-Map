@@ -12,7 +12,8 @@ var ViewModel = function() {
     this.venues(data);
   }, function(error) {
     console.error('Failed:', error);
-    document.body.innerHTML = '<h1>Oops, something went wrong</h1>';
+    document.body.classList = 'error mdl-color--grey-400 mdl-color-text--grey-700';
+    document.body.innerHTML = '<h1 class="error__text">Oops, something went wrong</h1>';
   });
 };
 

@@ -143,3 +143,13 @@ html, body {
   display: flex;
   flex-flow: row wrap;
 }
+
+/* Error */
+
+.error {
+  display: flex;
+}
+
+.error__text {
+  margin: auto;
+}
