@@ -1,6 +1,12 @@
 var ViewModel = function() {
   'use strict';
   this.filter = ko.observable('');
+  this.drawerActive = ko.observable(false);
+  this.listActive = ko.observable(true);
+  this.toggleListAndDrawer = () => {
+    this.drawerActive(!this.drawerActive());
+    this.listActive(!this.listActive());
+  };
   this.venues = ko.observableArray([]);
   dataModel.foursquare.then(data => {
     this.venues(data);
