@@ -20,6 +20,7 @@ var ViewModel = function() {
         venue.name === filter;
     });
   }, this);
+  // TODO: Populate venue details
   dataModel.foursquare.then(data => {
     this.venues(data);
   }, function(error) {
