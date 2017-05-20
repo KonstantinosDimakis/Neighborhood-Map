@@ -63,9 +63,8 @@ var dataModel = {};
           if (item.venue.contact.phone) {
             venue.phone = item.venue.contact.phone;
           }
-          if (item.venue.contact.facebook) {
-            venue.facebook = 'https://www.facebook.com/' + item.venue.contact.facebook;
-          }
+          // TODO: Make all values to have this syntax as it's needed for knockoutjs
+          venue.facebook = item.venue.contact.facebook ? 'https://www.facebook.com/' + item.venue.contact.facebook : null;
           if (item.venue.price) {
             venue.price = item.venue.price.tier;
           }
