@@ -153,7 +153,7 @@
           </section>
         </article>
       </section>
-      <section data-bind="css: {active: listActive}, foreach: venues" id="venues-cards" class="scrlb-content--x scrlb-content--x-margin-8dp">
+      <section data-bind="css: {active: listActive}, foreach: venuesToShow" id="venues-cards" class="scrlb-content--x scrlb-content--x-margin-8dp">
         <article data-bind="click: $parent.toggleListAndDrawer" class="mdl-grid mdl-grid--no-spacing mdl-venue-card mdl-shadow--4dp mdl-color--primary-contrast">
           <h3 data-bind="text: name" class="mdl-typography--title mdl-venue-card__title mdl-cell mdl-cell--12-col"></h3>
           <section data-bind="foreach: rating.stars" class="mdl-cell mdl-cell--12-col">

@@ -8,6 +8,15 @@ var ViewModel = function() {
     this.listActive(!this.listActive());
   };
   this.venues = ko.observableArray([]);
+  this.venuesToShow = ko.pureComputed(function() {
+    var filter = this.filter();
+    if (filter === '') {
+      return this.venues();
+    }
+    return ko.utils.arrayFilter(this.venues(), function(venue) {
+      return venue.category.tag === filter || venue.category.name === filter || venue.name === filter;
+    });
+  }, this);
   dataModel.foursquare.then(data => {
     this.venues(data);
   }, function(error) {
