@@ -60,20 +60,11 @@ var dataModel = {};
             venue.rating.stars[i] = 'images/star_half_yellow_18px.svg';
           }
           // filter through non-standard information
-          if (item.venue.contact.phone) {
-            venue.phone = item.venue.contact.phone;
-          }
-          // TODO: Make all values to have this syntax as it's needed for knockoutjs
+          venue.phone = item.venue.contact.phone ? item.venue.contact.phone : null;
           venue.facebook = item.venue.contact.facebook ? 'https://www.facebook.com/' + item.venue.contact.facebook : null;
-          if (item.venue.price) {
-            venue.price = item.venue.price.tier;
-          }
-          if (item.venue.hours) {
-            venue.isOpen = item.venue.hours.isOpen;
-          }
-          if (item.venue.url) {
-            venue.url = item.venue.url;
-          }
+          venue.price = item.venue.price ? item.venue.price : null;
+          venue.isOpen = item.venue.hours ? item.venue.hours.isOpen : null;
+          venue.url = item.venue.url ? item.venue.url : null;
           venues.push(venue);
         }
         resolve(venues);
