@@ -14,6 +14,7 @@ var ViewModel = function() {
       return this.venues();
     }
     return ko.utils.arrayFilter(this.venues(), function(venue) {
+      // TODO: Make filtering UX MUCH better
       return venue.category.tag === filter || venue.category.name === filter || venue.name === filter;
     });
   }, this);
