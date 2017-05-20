@@ -9,13 +9,15 @@ var dataModel = {};
     const V = '20170425';
     const VENUE_PHOTOS = '1';
     const BASE_URL = 'https://api.foursquare.com/v2/venues/explore?';
+    const LIMIT = 50;
 
     var url = BASE_URL +
       'client_id=' + FOURSQUARE_CLIENT_ID +
       '&client_secret=' + FOURSQUARE_CLIENT_SECRET +
       '&ll=' + LL +
       '&v=' + V +
-      '&venuePhotos=' + VENUE_PHOTOS;
+      '&venuePhotos=' + VENUE_PHOTOS +
+      '&limit=' + LIMIT;
 
     var request = new XMLHttpRequest();
     request.open('GET', url);
