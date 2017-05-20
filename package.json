@@ -39,9 +39,7 @@
     "extends": "google",
     "env": {
       "browser": true,
-      "node": true,
-      "amd": true,
-      "jquery": true
+      "node": true
     },
     "globals": {
       "ko": true,
