@@ -63,7 +63,10 @@ var dataModel = {};
           venue.phone = item.venue.contact.phone ? item.venue.contact.phone : null;
           venue.facebook = item.venue.contact.facebook ? 'https://www.facebook.com/' + item.venue.contact.facebook : null;
           venue.price = item.venue.price ? item.venue.price : null;
-          venue.isOpen = item.venue.hours ? item.venue.hours.isOpen : null;
+          venue.status = {
+            isOpen: item.venue.hours ? item.venue.hours.isOpen : null,
+            message: item.venue.hours ? item.venue.hours.isOpen : null
+          };
           venue.url = item.venue.url ? item.venue.url : null;
           venues.push(venue);
         }
