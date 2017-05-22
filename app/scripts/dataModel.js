@@ -63,10 +63,12 @@ var dataModel = {};
           venue.phone = item.venue.contact.phone ? item.venue.contact.phone : null;
           venue.facebook = item.venue.contact.facebook ? 'https://www.facebook.com/' + item.venue.contact.facebook : null;
           venue.price = item.venue.price ? item.venue.price : null;
-          venue.status = {
-            isOpen: item.venue.hours ? item.venue.hours.isOpen : null,
-            message: item.venue.hours ? item.venue.hours.status : null
-          };
+          // Even if Foursquare has hours on a venue,
+          // when a venue is closed sometimes the status
+          // message is omitted and only the flag
+          // isOpen: false exists. That's the logic
+          // the following statement represents
+          venue.status = item.venue.hours ? item.venue.hours.status || 'Closed' : null;
           venue.url = item.venue.url ? item.venue.url : null;
           venues.push(venue);
         }
