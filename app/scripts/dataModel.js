@@ -62,7 +62,7 @@ var dataModel = {};
           // filter through non-standard information
           venue.phone = item.venue.contact.phone ? item.venue.contact.phone : null;
           venue.facebook = item.venue.contact.facebook ? 'https://www.facebook.com/' + item.venue.contact.facebook : null;
-          venue.price = item.venue.price ? item.venue.price : null;
+          venue.price = item.venue.price ? item.venue.price.message : null;
           // Even if Foursquare has hours on a venue,
           // when a venue is closed sometimes the status
           // message is omitted and only the flag
