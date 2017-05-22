@@ -65,7 +65,7 @@ var dataModel = {};
           venue.price = item.venue.price ? item.venue.price : null;
           venue.status = {
             isOpen: item.venue.hours ? item.venue.hours.isOpen : null,
-            message: item.venue.hours ? item.venue.hours.isOpen : null
+            message: item.venue.hours ? item.venue.hours.status : null
           };
           venue.url = item.venue.url ? item.venue.url : null;
           venues.push(venue);
