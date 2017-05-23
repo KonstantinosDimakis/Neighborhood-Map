@@ -86,75 +86,87 @@
         <input data-bind="textInput: filter" class="mdl-filterbox__input" placeholder="Burger, Bar, Starbucks etc...">
       </section>
       <section data-bind="css: {active: drawerActive}" class="drawer">
-        <article id="venue-details" class="mdl-card unstyled-a">
-          <section class="mdl-card__media venue-details__media" style="background-image: url('https://igx.4sqi.net/img/general/original/55375453_KUlAQXJW64L8SiUt5aJtBjZTMlwfEWiSiNznZUZc6YY.jpg')"></section>
+        <article data-bind="with: currentVenue" id="venue-details" class="mdl-card unstyled-a">
+          <section data-bind="style: { backgroundImage: 'url(\'' + photo + '\')' }" class="mdl-card__media venue-details__media"></section>
           <header id="venue-details__header" class="mdl-card__title mdl-card--expand mdl-color-text--primary-contrast mdl-color--primary">
-            <h2 id="venue-details__header--title" class="mdl-card__title-text">Body & Soul</h2>
+            <h2 data-bind="text: name" id="venue-details__header--title" class="mdl-card__title-text"></h2>
             <section id="venue-details__header--rating">
-              <span id="venue-details__header--rating-number">3.6</span>
-              <div id="venue-details__header--rating-stars">
-                <img src="images/star_yellow_18px.svg" alt="Star">
-                <img src="images/star_yellow_18px.svg" alt="Star">
-                <img src="images/star_yellow_18px.svg" alt="Star">
-                <img src="images/star_half_yellow_18px.svg" alt="Star">
-                <img src="images/star_border_yellow_18px.svg" alt="Star">
+              <span data-bind="text: rating.number" id="venue-details__header--rating-number"></span>
+              <div data-bind="foreach: rating.stars">
+                <img data-bind="attr: {src: $data}" alt="Star">
               </div>
             </section>
-            <section id="venue-details__header--category">Gym</section>
+            <section data-bind="text: category.name" id="venue-details__header--category"></section>
           </header>
           <section id="venue-details__actions" class="mdl-card__actions">
-            <a id="venue-details__actions--foursquare" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+            <!--TODO: Fix layout issue on 3 elements-->
+            <a data-bind="attr: { href: foursquare }" id="venue-details__actions--foursquare" class="mdl-button mdl-js-button mdl-js-ripple-effect">
               <img src="images/foursquare_24px.svg" alt="Foursquare">
             </a>
             <div class="mdl-tooltip" data-mdl-for="venue-details__actions--foursquare">Foursquare</div>
-            <a id="venue-details__actions--facebook" class="mdl-button mdl-js-button mdl-js-ripple-effect">
-              <img src="images/facebook_24px.svg" alt="Facebook">
-            </a>
-            <div class="mdl-tooltip" data-mdl-for="venue-details__actions--facebook">Facebook</div>
-            <a href="tel:2221074742" id="venue-details__actions--call" class="mdl-button mdl-js-button mdl-js-ripple-effect">
-              <img src="images/call_indigo_500_24px.svg" alt="Call">
-            </a>
-            <div class="mdl-tooltip" data-mdl-for="venue-details__actions--call">Call</div>
-            <a href="https://www.google.gr/maps/dir/current+location/38.47001338150615,23.610336818101555" id="venue-details__actions--directions" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+            <div data-bind="if: facebook">
+              <a data-bind="attr: { href: facebook }" id="venue-details__actions--facebook" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+                <img src="images/facebook_24px.svg" alt="Facebook">
+              </a>
+              <div class="mdl-tooltip" data-mdl-for="venue-details__actions--facebook">Facebook</div>
+            </div>
+            <div data-bind="if: phone">
+              <a data-bind="attr: { href: 'tel:' + phone }" href="tel:2221074742" id="venue-details__actions--call" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+                <img src="images/call_indigo_500_24px.svg" alt="Call">
+              </a>
+              <div class="mdl-tooltip" data-mdl-for="venue-details__actions--call">Call</div>
+            </div>
+            <a data-bind="attr: { href: 'https://www.google.gr/maps/dir/current+location/' + location.lat + ',' + location.lng }"
+               id="venue-details__actions--directions"
+               class="mdl-button mdl-js-button mdl-js-ripple-effect">
               <img src="images/directions_indigo_500_24px.svg" alt="Directions">
             </a>
             <div class="mdl-tooltip" data-mdl-for="venue-details__actions--directions">Directions</div>
           </section>
-          <a href="https://www.google.gr/maps/dir/current+location/38.47001338150615,23.610336818101555">
-            <section id="venue-details__address" class="venue-details__supporting-information mdl-card__supporting-text mdl-card--border">
+          <a data-bind="attr: { href: 'https://www.google.gr/maps/dir/current+location/' + location.lat + ',' + location.lng }">
+            <section class="venue-details__supporting-information mdl-card__supporting-text mdl-card--border">
               <img class="venue-details__supporting-information--icon" src="images/location_indigo_500_24px.svg" alt="Location">
-              <span class="venue-details__supporting-information--text">Γρηγορίου Αργυροκαστρίτου 4 (1082m)</span>
+              <span data-bind="text: address" class="venue-details__supporting-information--text"></span>
+              <span data-bind="text: '(' + distance + 'm)'" class="venue-details__supporting-information--text"></span>
             </section>
           </a>
-          <section id="venue-details__status" class="venue-details__supporting-information mdl-card__supporting-text mdl-card--border">
-            <img class="venue-details__supporting-information--icon" src="images/access_time_indigo_500_24px.svg" alt="Status">
-            <span class="venue-details__supporting-information--text">Open now</span>
-          </section>
-          <section id="venue-details__price" class="venue-details__supporting-information mdl-card__supporting-text mdl-card--border">
-            <img class="venue-details__supporting-information--icon" src="images/attach_money_indigo_500_24px.svg" alt="Price">
-            <span class="venue-details__supporting-information--text">Expensive</span>
-          </section>
-          <a href="tel:2221074742">
-            <section id="venue-details__telephone-number" class="venue-details__supporting-information mdl-card__supporting-text mdl-card--border">
-              <img class="venue-details__supporting-information--icon" src="images/call_indigo_500_24px.svg" alt="Call">
-              <span class="venue-details__supporting-information--text">2221074742</span>
+          <div data-bind="if: status">
+            <section id="venue-details__status" class="venue-details__supporting-information mdl-card__supporting-text mdl-card--border">
+              <img class="venue-details__supporting-information--icon" src="images/access_time_indigo_500_24px.svg" alt="Status">
+              <span data-bind="text: status" class="venue-details__supporting-information--text"></span>
             </section>
-          </a>
-          <a href="http://e-bodysoul.gr">
-            <section id="venue-details__website" class="venue-details__supporting-information mdl-card__supporting-text mdl-card--border">
-              <img class="venue-details__supporting-information--icon" src="images/public_indigo_500_24px.svg" alt="Website">
-              <span class="venue-details__supporting-information--text">http://e-bodysoul.gr</span>
+          </div>
+          <div data-bind="if: price">
+            <section id="venue-details__price" class="venue-details__supporting-information mdl-card__supporting-text mdl-card--border">
+              <img class="venue-details__supporting-information--icon" src="images/attach_money_indigo_500_24px.svg" alt="Price">
+              <span data-bind="text: price" class="venue-details__supporting-information--text"></span>
             </section>
-          </a>
+          </div>
+          <div data-bind="if: phone">
+            <a data-bind="attr: { href: 'tel:' + phone }">
+              <section id="venue-details__telephone-number" class="venue-details__supporting-information mdl-card__supporting-text mdl-card--border">
+                <img class="venue-details__supporting-information--icon" src="images/call_indigo_500_24px.svg" alt="Call">
+                <span data-bind="text: phone" class="venue-details__supporting-information--text"></span>
+              </section>
+            </a>
+          </div>
+          <div data-bind="if: url">
+            <a data-bind="attr: { href: url }">
+              <section id="venue-details__website" class="venue-details__supporting-information mdl-card__supporting-text mdl-card--border">
+                <img class="venue-details__supporting-information--icon" src="images/public_indigo_500_24px.svg" alt="Website">
+                <span data-bind="text: url" class="venue-details__supporting-information--text"></span>
+              </section>
+            </a>
+          </div>
           <section class="mdl-card__menu">
-            <button data-bind="click: toggleListAndDrawer" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+            <button data-bind="click: $parent.toggleListAndDrawer" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
               <img src="images/close_white_24px.svg" alt="Close">
             </button>
           </section>
         </article>
       </section>
       <section data-bind="css: {active: listActive}, foreach: venuesToShow" id="venues-cards" class="scrlb-content--x scrlb-content--x-margin-8dp">
-        <article data-bind="click: $parent.toggleListAndDrawer" class="mdl-grid mdl-grid--no-spacing mdl-venue-card mdl-shadow--4dp mdl-color--primary-contrast">
+        <article data-bind="click: $parent.venueClick" class="mdl-grid mdl-grid--no-spacing mdl-venue-card mdl-shadow--4dp mdl-color--primary-contrast">
           <h3 data-bind="text: name" class="mdl-typography--title mdl-venue-card__title mdl-cell mdl-cell--12-col"></h3>
           <section data-bind="foreach: rating.stars" class="mdl-cell mdl-cell--12-col">
             <img data-bind="attr: {src: $data}" alt="Star">
