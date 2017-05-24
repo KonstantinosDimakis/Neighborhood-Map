@@ -54,6 +54,11 @@ var ViewModel = function() {
    */
   this.venues = ko.observableArray([]);
   /**
+   * Contains all venue markers
+   * @type {Array} Markers
+   */
+  this.markers = [];
+  /**
    * Filtering function
    * @type {KnockoutComputed<T>}
    */
@@ -75,7 +80,17 @@ var ViewModel = function() {
   }, this);
   // Make the API request
   dataModel.foursquare.then(data => {
+    // Populate observable array
     this.venues(data);
+    // Populate markers array
+    data.forEach(venue => {
+      this.markers.push(new google.maps.Marker({
+        position: venue.location,
+        title: venue.name,
+        animation: google.maps.Animation.DROP,
+        icon: venue.icon
+      }));
+    });
   }, function(error) {
     console.error('Failed:', error);
     document.body.classList.add(
