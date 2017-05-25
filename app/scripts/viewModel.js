@@ -31,7 +31,7 @@ var ViewModel = function() {
     this.setCurrentVenue(venue);
   };
   this.venueClick = venue => {
-    map.setCenter(venue.location);
+    map.panTo(venue.location);
     map.setZoom(17);
     venue.marker.setAnimation(google.maps.Animation.BOUNCE);
     // stop bounce animation after 4 seconds
