@@ -68,24 +68,44 @@ var ViewModel = function() {
    */
   this.markers = [];
   /**
+   * Unset markers on a given markers array
+   * @param {Array} markers Google Maps Markers Array
+   */
+  this.unsetMarkers = markers => {
+    for (var marker of markers) {
+      marker.setMap(null);
+    }
+  };
+  /**
    * Filtering function
    * @type {KnockoutComputed<T>}
    */
   this.venuesToShow = ko.pureComputed(function() {
     var filter = this.filter();
     if (filter === '') {
+      for (var marker of this.markers) {
+        marker.setMap(map);
+      }
       return this.venues();
     }
     /**
      * Filter through array and return only matching results
      * @see http://knockoutjs.com/examples/animatedTransitions.html
      */
-    return ko.utils.arrayFilter(this.venues(), function(venue) {
+    var filteredVenues = ko.utils.arrayFilter(this.venues(), function(venue) {
       // TODO: Make filtering UX MUCH better
       return venue.category.tag === filter ||
         venue.category.name === filter ||
         venue.name === filter;
     });
+    // unset all markers
+    this.unsetMarkers(this.markers);
+    // and reset those from the search results
+    for (var venue of filteredVenues) {
+      venue.marker.setMap(map);
+    }
+    // finally return the filtered venue results
+    return filteredVenues;
   }, this);
   // Populate arrays and initialize listeners
   // attach markers to venues
@@ -93,20 +113,26 @@ var ViewModel = function() {
   dataModel.foursquare.then(data => {
     // Populate observable array
     this.venues(data);
-    // Populate markers array
+    // For every venue
     for (let venue of this.venues()) {
+      // Create new marker
       let marker = new google.maps.Marker({
         position: venue.location,
         title: venue.name,
         animation: google.maps.Animation.DROP,
         icon: venue.icon
       });
-      // attach each marker to its venue
+      // attach marker to its venue
       venue.marker = marker;
+      // save the marker to markers array
       this.markers.push(marker);
+      // Add listener to open correct venue details
+      // when the marker is clicked
       marker.addListener('click', () => {
         this.markerClick(venue);
       });
+      // and finally set the marker
+      marker.setMap(map);
     }
   }, function(error) {
     console.error('Failed:', error);
