@@ -92,6 +92,9 @@ var ViewModel = function() {
         icon: venue.icon
       });
       this.markers.push(marker);
+      marker.addListener('click', () => {
+        this.venueClick(venue);
+      });
     }
   }, function(error) {
     console.error('Failed:', error);
