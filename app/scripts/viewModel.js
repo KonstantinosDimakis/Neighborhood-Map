@@ -24,11 +24,20 @@ var ViewModel = function() {
   this.listActive = ko.observable(true);
   /**
    * Is triggered when a venue in the list is clicked
-   * @param {Object} clickedVenue The clicked venue
+   * @param {Object} venue The clicked venue
    */
-  this.venueClick = clickedVenue => {
+  this.markerClick = venue => {
     this.toggleListAndDrawer();
-    this.setCurrentVenue(clickedVenue);
+    this.setCurrentVenue(venue);
+  };
+  this.venueClick = venue => {
+    map.setCenter(venue.location);
+    map.setZoom(17);
+    venue.marker.setAnimation(google.maps.Animation.BOUNCE);
+    // stop bounce animation after 4 seconds
+    setTimeout(function() {
+      venue.marker.setAnimation(null);
+    }, 4000);
   };
   /**
    * Toggle venues list and venue details drawer
@@ -96,7 +105,7 @@ var ViewModel = function() {
       venue.marker = marker;
       this.markers.push(marker);
       marker.addListener('click', () => {
-        this.venueClick(venue);
+        this.markerClick(venue);
       });
     }
   }, function(error) {
