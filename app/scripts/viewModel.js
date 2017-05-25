@@ -78,19 +78,21 @@ var ViewModel = function() {
         venue.name === filter;
     });
   }, this);
-  // Make the API request
+  // Populate arrays and initialize listeners
+  // when response is ready
   dataModel.foursquare.then(data => {
     // Populate observable array
     this.venues(data);
     // Populate markers array
-    data.forEach(venue => {
-      this.markers.push(new google.maps.Marker({
+    for (let venue of this.venues()) {
+      let marker = new google.maps.Marker({
         position: venue.location,
         title: venue.name,
         animation: google.maps.Animation.DROP,
         icon: venue.icon
-      }));
-    });
+      });
+      this.markers.push(marker);
+    }
   }, function(error) {
     console.error('Failed:', error);
     document.body.classList.add(
