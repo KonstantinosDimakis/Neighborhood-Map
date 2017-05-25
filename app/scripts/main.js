@@ -71,16 +71,6 @@
       console.error('Error during service worker registration:', e);
     });
   }
-  /**
-   * Populates a given google Map with given markers array
-   * @param {Array} markers Markers Array
-   * @param {google.maps.Map} map Google Map
-   */
-  window.populateMarkersOnMap = function(markers, map) {
-    for (var marker of markers) {
-      marker.setMap(map);
-    }
-  };
   window.initMap = function() {
     window.map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 38.464576, lng: 23.600043},
