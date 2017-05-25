@@ -44,7 +44,7 @@ var dataModel = {};
                 'images/star_border_yellow_18px.svg'
               ]
             },
-            icon: item.venue.categories[0].icon.prefix + '32' + item.venue.categories[0].icon.suffix,
+            icon: item.venue.categories[0].icon.prefix + 'bg_32' + item.venue.categories[0].icon.suffix,
             category: {
               name: item.venue.categories[0].name,
               tag: item.venue.categories[0].shortName
