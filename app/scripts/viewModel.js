@@ -79,6 +79,7 @@ var ViewModel = function() {
     });
   }, this);
   // Populate arrays and initialize listeners
+  // attach markers to venues
   // when response is ready
   dataModel.foursquare.then(data => {
     // Populate observable array
@@ -91,6 +92,8 @@ var ViewModel = function() {
         animation: google.maps.Animation.DROP,
         icon: venue.icon
       });
+      // attach each marker to its venue
+      venue.marker = marker;
       this.markers.push(marker);
       marker.addListener('click', () => {
         this.venueClick(venue);
