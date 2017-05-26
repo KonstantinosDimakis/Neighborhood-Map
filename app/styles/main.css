@@ -159,5 +159,6 @@ html, body {
 }
 
 .error__text {
+  text-align: center;
   margin: auto;
 }

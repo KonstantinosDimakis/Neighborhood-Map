@@ -141,7 +141,12 @@ var ViewModel = function() {
       'mdl-color--grey-300',
       'mdl-color-text--grey-700'
     );
-    document.body.innerHTML = '<h1 class="error__text">Oops, something went wrong</h1>';
+    document.body.innerHTML = '<div class="error__text">' +
+      '<h1>Oops, something went wrong</h1>' +
+      '<h2>' +
+      error +
+      '</h2>' +
+      '</div>';
   });
 };
 
