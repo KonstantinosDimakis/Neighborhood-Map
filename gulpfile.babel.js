@@ -110,8 +110,7 @@ gulp.task('scripts', () =>
       // Note: Since we are not using useref in the scripts build pipeline,
       //       you need to explicitly list your scripts here in the right order
       //       to be correctly concatenated
-      '!./app/scripts/sw/*',
-      './app/scripts/**/*.js'
+      './app/scripts/main.js'
       // Other scripts
     ])
       .pipe($.newer('.tmp/scripts'))
@@ -119,6 +118,7 @@ gulp.task('scripts', () =>
       .pipe($.babel())
       .pipe($.sourcemaps.write())
       .pipe(gulp.dest('.tmp/scripts'))
+      .pipe($.concat('main.min.js'))
       .pipe($.uglify({preserveComments: 'some'}))
       // Output files
       .pipe($.size({title: 'scripts'}))
