@@ -109,7 +109,7 @@ var ViewModel = function() {
   // Populate arrays and initialize listeners
   // attach markers to venues
   // when response is ready
-  dataModel.foursquare.then(data => {
+  dataModel.foursquare('38.464525,23.60507').then(data => {
     // Populate observable array
     this.venues(data);
     // For every venue
