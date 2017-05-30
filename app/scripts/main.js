@@ -72,8 +72,7 @@
     });
   }
   window.map = new google.maps.Map(document.getElementById('map'), {
-    // TODO: Make center the center of Chalkis, Greece
-    center: {lat: 38.464576, lng: 23.600043},
+    center: {lat: 38.464525, lng: 23.60507},
     zoom: 13,
       // Style by: Sam Herbert, on: https://snazzymaps.com/style/44/mapbox
     styles: [

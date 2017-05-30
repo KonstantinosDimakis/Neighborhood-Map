@@ -3,7 +3,7 @@ dataModel.foursquare = new Promise(function(resolve, reject) {
   const FOURSQUARE_CLIENT_ID = 'DZLWV3OVTRDIJ4A3HYBWIHZLHNPPWSPULWU0MOIUPV4UGD0B';
   const FOURSQUARE_CLIENT_SECRET = 'MFMOIF4BD4H0K3ULA41LF2WD5SK0KRJAQLTUZT4VV3XVGC0O';
   // here I can replace this static address for navigator.geolocation
-  const LL = '38.464576,23.600043';
+  const LL = '38.464525,23.60507';
   const V = '20170425';
   const VENUE_PHOTOS = '1';
   const BASE_URL = 'https://api.foursquare.com/v2/venues/explore?';
