@@ -60,11 +60,6 @@ html, body {
 
 #venues-cards {
   min-height: 110px;
-  display: none;
-}
-
-#venues-cards.active {
-  display: inherit;
 }
 
 .mdl-venue-card {

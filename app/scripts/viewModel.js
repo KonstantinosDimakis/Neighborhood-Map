@@ -11,17 +11,22 @@ var ViewModel = function() {
    * Status of the drawer UI component
    * @type {KnockoutObservable<T>}
    */
-  this.drawerActive = ko.observable(false);
+  this.isDrawerVisible = ko.observable(false);
+  /**
+   * Status of the map UI component
+   * @type {KnockoutObservable<T>}
+   */
+  this.isMapVisible = ko.observable(true);
+  /**
+   * Status of the list UI component
+   * @type {KnockoutObservable<T>}
+   */
+  this.isListVisible = ko.observable(true);
   /**
    * Current venue
    * @type {KnockoutObservable<T>}
    */
   this.currentVenue = ko.observable();
-  /**
-   * Status of the list UI component
-   * @type {KnockoutObservable<T>}
-   */
-  this.listActive = ko.observable(true);
   /**
    * Is triggered when a venue in the list is clicked
    * @param {Object} venue The clicked venue
@@ -41,12 +46,12 @@ var ViewModel = function() {
   };
   /**
    * Toggle venues list and venue details drawer
-   * to active/non-active.
+   * to visble/non-visible.
    * Only 1 should be shown at a time
    */
   this.toggleListAndDrawer = () => {
-    this.drawerActive(!this.drawerActive());
-    this.listActive(!this.listActive());
+    this.isDrawerVisible(!this.isDrawerVisible());
+    this.isListVisible(!this.isListVisible());
   };
   /**
    * Set currentVenue to venue
