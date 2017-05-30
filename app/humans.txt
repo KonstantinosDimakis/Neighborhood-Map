@@ -3,7 +3,10 @@
 
 # TEAM
 
-  <name> -- <role> -- <twitter>
+  Konstantinos Dimakis
+  Site: https://github.com/konstantinosdimakis
+  Twitter: @KonstantDimakis
+  Location: 127.0.0.1
 
 # THANKS
 
@@ -11,4 +14,4 @@
 
 # TECHNOLOGY COLOPHON
 
-  HTML5, CSS3
+  HTML5, CSS3, KnockoutJS, Google Maps, Web Starter Kit
