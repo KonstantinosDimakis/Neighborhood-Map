@@ -1,8 +1,9 @@
 var dataModel = {};
 dataModel.foursquare = new Promise(function(resolve, reject) {
-  const FOURSQUARE_CLIENT_ID = 'DZLWV3OVTRDIJ4A3HYBWIHZLHNPPWSPULWU0MOIUPV4UGD0B';
-  const FOURSQUARE_CLIENT_SECRET = 'MFMOIF4BD4H0K3ULA41LF2WD5SK0KRJAQLTUZT4VV3XVGC0O';
-  // here I can replace this static address for navigator.geolocation
+  const FOURSQUARE_CLIENT_ID =
+    'DZLWV3OVTRDIJ4A3HYBWIHZLHNPPWSPULWU0MOIUPV4UGD0B';
+  const FOURSQUARE_CLIENT_SECRET =
+    'MFMOIF4BD4H0K3ULA41LF2WD5SK0KRJAQLTUZT4VV3XVGC0O';
   const LL = '38.464525,23.60507';
   const V = '20170425';
   const VENUE_PHOTOS = '1';
@@ -28,8 +29,14 @@ dataModel.foursquare = new Promise(function(resolve, reject) {
       for (let item of request.response.response.groups[0].items) {
         let venue = {
           name: item.venue.name,
-          foursquare: 'https://foursquare.com/v/' + item.venue.id + '?ref=' + FOURSQUARE_CLIENT_ID,
-          location: {lat: item.venue.location.lat, lng: item.venue.location.lng},
+          foursquare: 'https://foursquare.com/v/' +
+            item.venue.id +
+            '?ref=' +
+            FOURSQUARE_CLIENT_ID,
+          location: {
+            lat: item.venue.location.lat,
+            lng: item.venue.location.lng
+          },
           distance: item.venue.location.distance,
           address: item.venue.location.address,
           rating: {
@@ -42,12 +49,16 @@ dataModel.foursquare = new Promise(function(resolve, reject) {
               'images/star_border_yellow_18px.svg'
             ]
           },
-          icon: item.venue.categories[0].icon.prefix + 'bg_32' + item.venue.categories[0].icon.suffix,
+          icon: item.venue.categories[0].icon.prefix +
+            'bg_32' +
+            item.venue.categories[0].icon.suffix,
           category: {
             name: item.venue.categories[0].name,
             tag: item.venue.categories[0].shortName
           },
-          photo: item.venue.featuredPhotos.items[0].prefix + 'original' + item.venue.featuredPhotos.items[0].suffix
+          photo: item.venue.featuredPhotos.items[0].prefix +
+            'original' +
+            item.venue.featuredPhotos.items[0].suffix
         };
         // fix rating.stars
         var i;
@@ -58,7 +69,8 @@ dataModel.foursquare = new Promise(function(resolve, reject) {
           venue.rating.stars[i] = 'images/star_half_yellow_18px.svg';
         }
         // filter through non-standard information
-        venue.phone = item.venue.contact.phone ? item.venue.contact.phone : null;
+        venue.phone = item.venue.contact.phone ?
+          item.venue.contact.phone : null;
         venue.facebook = item.venue.contact.facebook ? 'https://www.facebook.com/' + item.venue.contact.facebook : null;
         venue.price = item.venue.price ? item.venue.price.message : null;
         // Even if Foursquare has hours on a venue,
@@ -66,14 +78,17 @@ dataModel.foursquare = new Promise(function(resolve, reject) {
         // message is omitted and only the flag
         // isOpen: false exists. That's the logic
         // the following statement represents
-        venue.status = item.venue.hours ? item.venue.hours.status || 'Closed' : null;
+        venue.status = item.venue.hours ?
+          item.venue.hours.status || 'Closed' : null;
         venue.url = item.venue.url ? item.venue.url : null;
         venues.push(venue);
       }
       resolve(venues);
     } else {
       // If it fails, reject the promise with an error message
-      reject(Error('There was a problem:', '(', request.status, ')', request.statusText));
+      let status = request.status;
+      let statusText = request.statusText;
+      reject(Error('There was a problem:', '(', status, ')', statusText));
     }
   };
   // Also deal with the case when the entire request fails to begin with
