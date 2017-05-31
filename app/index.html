@@ -80,7 +80,7 @@
     <!--TODO: Smoothen out all the toggling list & drawer animations-->
     <main class="mdl-layout mdl-js-layout">
       <section data-bind="visible: isMapVisible" id="map"></section>
-      <section id="filterbox" class="mdl-filterbox mdl-color--primary-contrast mdl-shadow--4dp">
+      <section data-bind="visible: isFilterboxVisible" id="filterbox" class="mdl-filterbox mdl-color--primary-contrast mdl-shadow--4dp">
         <img title="Filter" class="mdl-filterbox__icon" src="images/filter_list_black_24px.svg" alt="Filter">
         <input data-bind="textInput: filter" class="mdl-filterbox__input" placeholder="Burger, Bar, Starbucks etc...">
       </section>

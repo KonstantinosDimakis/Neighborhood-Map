@@ -18,6 +18,11 @@ var ViewModel = function() {
    */
   this.isMapVisible = ko.observable(true);
   /**
+   * Status of the filterbox UI component
+   * @type {KnockoutObservable<T>}
+   */
+  this.isFilterboxVisible = ko.observable(true);
+  /**
    * Status of the list UI component
    * @type {KnockoutObservable<T>}
    */
