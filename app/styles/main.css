@@ -26,7 +26,7 @@ html, body {
 }
 
 #map {
-  height: 100%;
+  height: calc(100vh - 110px);
 }
 
 /* Filterbox */
@@ -59,7 +59,7 @@ html, body {
 /* Venue Cards */
 
 #venues-cards {
-  min-height: 110px;
+  height: 110px;
 }
 
 .mdl-venue-card {
