@@ -37,7 +37,7 @@ var ViewModel = function() {
    * @param {Object} venue The clicked venue
    */
   this.markerClick = venue => {
-    this.toggleListAndDrawer();
+    this.toggleListDrawerAndMap();
     this.setCurrentVenue(venue);
   };
   this.venueClick = venue => {
@@ -50,13 +50,14 @@ var ViewModel = function() {
     }, 4000);
   };
   /**
-   * Toggle venues list and venue details drawer
+   * Toggle venues list, venue details drawer and map
    * to visble/non-visible.
-   * Only 1 should be shown at a time
+   * Venue details should be the only thing that is shown
    */
-  this.toggleListAndDrawer = () => {
+  this.toggleListDrawerAndMap = () => {
     this.isDrawerVisible(!this.isDrawerVisible());
     this.isListVisible(!this.isListVisible());
+    this.isMapVisible(!this.isMapVisible());
   };
   /**
    * Set currentVenue to venue
