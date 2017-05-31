@@ -99,28 +99,25 @@
             <section data-bind="text: category.name" id="venue-details__header--category"></section>
           </header>
           <section id="venue-details__actions" class="mdl-card__actions">
-            <a data-bind="attr: { href: foursquare }" id="venue-details__actions--foursquare" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+            <a data-bind="attr: { href: foursquare }" title="Foursquare" id="venue-details__actions--foursquare" class="mdl-button mdl-js-button mdl-js-ripple-effect">
               <img src="images/foursquare_24px.svg" alt="Foursquare">
             </a>
-            <div class="mdl-tooltip" data-mdl-for="venue-details__actions--foursquare">Foursquare</div>
             <div data-bind="if: facebook, visible: facebook">
-              <a data-bind="attr: { href: facebook }" id="venue-details__actions--facebook" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+              <a data-bind="attr: { href: facebook }" title="Facebook" id="venue-details__actions--facebook" class="mdl-button mdl-js-button mdl-js-ripple-effect">
                 <img src="images/facebook_24px.svg" alt="Facebook">
               </a>
-              <div class="mdl-tooltip" data-mdl-for="venue-details__actions--facebook">Facebook</div>
             </div>
             <div data-bind="if: phone, visible: phone">
-              <a data-bind="attr: { href: 'tel:' + phone }" href="tel:2221074742" id="venue-details__actions--call" class="mdl-button mdl-js-button mdl-js-ripple-effect">
+              <a data-bind="attr: { href: 'tel:' + phone }" title="Call" href="tel:2221074742" id="venue-details__actions--call" class="mdl-button mdl-js-button mdl-js-ripple-effect">
                 <img src="images/call_indigo_500_24px.svg" alt="Call">
               </a>
-              <div class="mdl-tooltip" data-mdl-for="venue-details__actions--call">Call</div>
             </div>
             <a data-bind="attr: { href: 'https://www.google.gr/maps/dir/current+location/' + location.lat + ',' + location.lng }"
+               title="Directions"
                id="venue-details__actions--directions"
                class="mdl-button mdl-js-button mdl-js-ripple-effect">
               <img src="images/directions_indigo_500_24px.svg" alt="Directions">
             </a>
-            <div class="mdl-tooltip" data-mdl-for="venue-details__actions--directions">Directions</div>
           </section>
           <a data-bind="attr: { href: 'https://www.google.gr/maps/dir/current+location/' + location.lat + ',' + location.lng }">
             <section class="venue-details__supporting-information mdl-card__supporting-text mdl-card--border">
