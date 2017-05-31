@@ -7,3 +7,7 @@
   text-decoration: inherit;
   font-weight: inherit;
 }
+
+.unstyled-p p {
+  margin: inherit;
+}

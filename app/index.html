@@ -86,7 +86,6 @@
       </section>
       <section data-bind="visible: isDrawerVisible" class="mdl-cell mdl-cell--12-col">
         <article data-bind="with: currentVenue" id="venue-details" class="mdl-card unstyled-a">
-          <img class="powered-by-foursquare" src="images/powered-by-foursquare-full-color-150.png" alt="Powered by Foursquare">
           <section data-bind="style: { backgroundImage: 'url(\'' + photo + '\')' }" class="mdl-card__media venue-details__media"></section>
           <header id="venue-details__header" class="mdl-card__title mdl-card--expand mdl-color-text--primary-contrast mdl-color--primary">
             <h2 data-bind="text: name" id="venue-details__header--title" class="mdl-card__title-text"></h2>
@@ -119,46 +118,51 @@
               <img src="images/directions_indigo_500_24px.svg" alt="Directions">
             </a>
           </section>
-          <a data-bind="attr: { href: 'https://www.google.gr/maps/dir/current+location/' + location.lat + ',' + location.lng }">
-            <section class="venue-details__supporting-information mdl-card__supporting-text mdl-card--border">
-              <img class="venue-details__supporting-information--icon" src="images/location_indigo_500_24px.svg" alt="Location">
-              <span data-bind="text: address" class="venue-details__supporting-information--text"></span>
-              <span data-bind="text: '(' + distance + 'm)'" class="venue-details__supporting-information--text"></span>
-            </section>
-          </a>
-          <div data-bind="if: status">
-            <section id="venue-details__status" class="venue-details__supporting-information mdl-card__supporting-text mdl-card--border">
-              <img class="venue-details__supporting-information--icon" src="images/access_time_indigo_500_24px.svg" alt="Status">
-              <span data-bind="text: status" class="venue-details__supporting-information--text"></span>
-            </section>
-          </div>
-          <div data-bind="if: price">
-            <section id="venue-details__price" class="venue-details__supporting-information mdl-card__supporting-text mdl-card--border">
-              <img class="venue-details__supporting-information--icon" src="images/attach_money_indigo_500_24px.svg" alt="Price">
-              <span data-bind="text: price" class="venue-details__supporting-information--text"></span>
-            </section>
-          </div>
-          <div data-bind="if: phone">
-            <a data-bind="attr: { href: 'tel:' + phone }">
-              <section id="venue-details__telephone-number" class="venue-details__supporting-information mdl-card__supporting-text mdl-card--border">
-                <img class="venue-details__supporting-information--icon" src="images/call_indigo_500_24px.svg" alt="Call">
-                <span data-bind="text: phone" class="venue-details__supporting-information--text"></span>
-              </section>
+          <section class="unstyled-p">
+            <a data-bind="attr: { href: 'https://www.google.gr/maps/dir/current+location/' + location.lat + ',' + location.lng }">
+              <p class="venue-details__supporting-information mdl-card__supporting-text mdl-card--border">
+                <img class="venue-details__supporting-information--icon" src="images/location_indigo_500_24px.svg" alt="Location">
+                <span data-bind="text: address" class="venue-details__supporting-information--text"></span>
+                <span data-bind="text: '(' + distance + 'm)'" class="venue-details__supporting-information--text"></span>
+              </p>
             </a>
-          </div>
-          <div data-bind="if: url">
-            <a data-bind="attr: { href: url }">
-              <section id="venue-details__website" class="venue-details__supporting-information mdl-card__supporting-text mdl-card--border">
-                <img class="venue-details__supporting-information--icon" src="images/public_indigo_500_24px.svg" alt="Website">
-                <span data-bind="text: url" class="venue-details__supporting-information--text"></span>
-              </section>
-            </a>
-          </div>
+            <div data-bind="if: status">
+              <p id="venue-details__status" class="venue-details__supporting-information mdl-card__supporting-text mdl-card--border">
+                <img class="venue-details__supporting-information--icon" src="images/access_time_indigo_500_24px.svg" alt="Status">
+                <span data-bind="text: status" class="venue-details__supporting-information--text"></span>
+              </p>
+            </div>
+            <div data-bind="if: price">
+              <p id="venue-details__price" class="venue-details__supporting-information mdl-card__supporting-text mdl-card--border">
+                <img class="venue-details__supporting-information--icon" src="images/attach_money_indigo_500_24px.svg" alt="Price">
+                <span data-bind="text: price" class="venue-details__supporting-information--text"></span>
+              </p>
+            </div>
+            <div data-bind="if: phone">
+              <a data-bind="attr: { href: 'tel:' + phone }">
+                <p id="venue-details__telephone-number" class="venue-details__supporting-information mdl-card__supporting-text mdl-card--border">
+                  <img class="venue-details__supporting-information--icon" src="images/call_indigo_500_24px.svg" alt="Call">
+                  <span data-bind="text: phone" class="venue-details__supporting-information--text"></span>
+                </p>
+              </a>
+            </div>
+            <div data-bind="if: url">
+              <a data-bind="attr: { href: url }">
+                <p id="venue-details__website" class="venue-details__supporting-information mdl-card__supporting-text mdl-card--border">
+                  <img class="venue-details__supporting-information--icon" src="images/public_indigo_500_24px.svg" alt="Website">
+                  <span data-bind="text: url" class="venue-details__supporting-information--text"></span>
+                </p>
+              </a>
+            </div>
+          </section>
           <section class="mdl-card__menu">
             <button data-bind="click: $parent.toggleListDrawerAndMap" class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
               <img src="images/close_white_24px.svg" alt="Close">
             </button>
           </section>
+          <footer class="powered-by-foursquare">
+            <img src="images/powered-by-foursquare-full-color-150.png" alt="Powered by Foursquare">
+          </footer>
         </article>
       </section>
       <section data-bind="visible: isListVisible, foreach: venuesToShow" id="venues-cards" class="mdl-cell mdl-cell--12-col scrlb-content--x scrlb-content--x-margin-8dp">

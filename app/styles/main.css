@@ -108,13 +108,16 @@ html, body {
   margin-right: 8px;
 }
 
-#venue-details .powered-by-foursquare {
+#venue-details footer {
   background-color: white;
-  width: 150px;
-  height: auto;
   position: absolute;
   right: 0;
   bottom: 0;
+}
+
+#venue-details footer img {
+  width: 150px;
+  height: auto;
 }
 
 .mdl-card .mdl-card--border {
