@@ -217,7 +217,4 @@
      */
     mapTypeControl: false
   });
-  setTimeout(function() {
-    google.maps.event.trigger(map, 'resize');
-  }, 1500);
 })();
