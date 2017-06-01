@@ -114,14 +114,13 @@ body, main {
   margin-right: 8px;
 }
 
-#venue-details footer {
-  background-color: white;
+#venue-details .powered-by-foursquare {
   position: absolute;
   right: 0;
   bottom: 0;
 }
 
-#venue-details footer img {
+#venue-details .powered-by-foursquare img {
   width: 150px;
   height: auto;
 }
