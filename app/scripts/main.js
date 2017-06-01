@@ -73,7 +73,7 @@
   }
   window.map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 38.464525, lng: 23.60507},
-    zoom: 13,
+    zoom: 12,
       // Style by: Sam Herbert, on: https://snazzymaps.com/style/44/mapbox
     styles: [
       {
