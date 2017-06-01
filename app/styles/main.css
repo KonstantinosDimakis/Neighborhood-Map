@@ -29,9 +29,14 @@ body, main {
   height: 100%;
 }
 
+.flexbox {
+  flex-flow: column;
+  display: flex;
+}
+
 #map {
-  /* 100% - Venues List height (113px) */
-  height: calc(100% - 113px);
+  flex-grow: 1;
+  flex-shrink: 0;
 }
 
 /* Filterbox */

@@ -78,13 +78,13 @@
   </head>
   <body>
     <!--TODO: Smoothen out all the toggling list & drawer animations-->
-    <main class="mdl-grid mdl-grid--no-spacing">
-      <section data-bind="visible: isMapVisible" class="mdl-cell mdl-cell--12-col" id="map"></section>
+    <main class="flexbox">
+      <section data-bind="visible: isMapVisible" id="map"></section>
       <section data-bind="visible: isFilterboxVisible" id="filterbox" class="mdl-filterbox mdl-color--primary-contrast mdl-shadow--4dp">
         <img title="Filter" class="mdl-filterbox__icon" src="images/filter_list_black_24px.svg" alt="Filter">
         <input data-bind="textInput: filter" class="mdl-filterbox__input" placeholder="Burger, Bar, Starbucks etc...">
       </section>
-      <section data-bind="visible: isDrawerVisible" class="mdl-cell mdl-cell--12-col">
+      <section data-bind="visible: isDrawerVisible">
         <article data-bind="with: currentVenue" id="venue-details" class="mdl-card unstyled-a">
           <section data-bind="style: { backgroundImage: 'url(\'' + photo + '\')' }" class="mdl-card__media venue-details__media"></section>
           <header id="venue-details__header" class="mdl-card__title mdl-card--expand mdl-color-text--primary-contrast mdl-color--primary">
@@ -165,7 +165,7 @@
           </footer>
         </article>
       </section>
-      <section data-bind="visible: isListVisible, foreach: venuesToShow" id="venues-cards" class="mdl-cell mdl-cell--12-col scrlb-content--x scrlb-content--x-margin-8dp">
+      <section data-bind="visible: isListVisible, foreach: venuesToShow" id="venues-cards" class="scrlb-content--x scrlb-content--x-margin-8dp">
         <article data-bind="click: $parent.venueClick" class="mdl-grid mdl-grid--no-spacing mdl-venue-card mdl-shadow--4dp mdl-color--primary-contrast">
           <h3 data-bind="text: name" class="mdl-typography--title mdl-venue-card__title mdl-cell mdl-cell--12-col"></h3>
           <section data-bind="foreach: rating.stars" class="mdl-cell mdl-cell--12-col">
