@@ -41,24 +41,6 @@ body, main {
 
 /* Filterbox */
 
-.mdl-filterbox {
-  display: flex;
-  flex-flow: row wrap;
-  padding: 12px 12px;
-}
-
-.mdl-filterbox .mdl-filterbox__input {
-  border: none;
-  outline: none;
-  flex-basis: 0;
-  flex-grow: 1;
-}
-
-.mdl-filterbox .mdl-filterbox__icon {
-  margin-right: 8px;
-  outline: none;
-}
-
 #filterbox {
   position: absolute;
   left: 1%;
