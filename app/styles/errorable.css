@@ -1,0 +1,8 @@
+.error {
+  display: flex;
+}
+
+.error__text {
+  text-align: center;
+  margin: auto;
+}
