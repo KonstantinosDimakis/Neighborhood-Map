@@ -26,6 +26,13 @@ or
 
 * Get the code from this repository and build it. Since this project is based on Web Starter kit the same docs for installing and serving the website apply. Be sure to look over the [installation docs](docs/install.md) to verify your environment is prepared to run WSK. Once you have verified that your system can run WSK, check out the [commands](docs/commands.md) available to get started.
 
+The gist of it is:
+1. Get [npm](https://www.npmjs.com/).
+2. Get [gulp](http://gulpjs.com/).
+3. `cd` into the project file.
+4. Install the project depedencies via `npm install`.
+5. Use gulp to serve the project via `gulp serve:dist`.
+
 ## Links
 
 * [Web Starter Kit](https://developers.google.com/web/tools/starter-kit/) - Web Starter Kit is an opinionated boilerplate for web development.
