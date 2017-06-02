@@ -75,11 +75,18 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/scrollable.css">
     <link rel="stylesheet" href="styles/unstyled.css">
+    <link rel="stylesheet" href="styles/errorable.css">
     <link rel="stylesheet" href="styles/inputbox.css">
   </head>
   <body>
     <!--TODO: Smoothen out all the toggling list & drawer animations-->
-    <main class="flexbox">
+    <div id="error-panel" data-bind="visible: error" class="error mdl-color--grey-300 mdl-color-text--grey-700">
+      <div class="error__text">
+        <h1>Oops, something went wrong</h1>
+        <h2 data-bind="text: error"></h2>
+      </div>
+    </div>
+    <main data-bind="visible: errorFree" class="flexbox">
       <section data-bind="visible: isMapVisible" id="map"></section>
       <section data-bind="visible: isFilterboxVisible" id="filterbox" class="inputbox mdl-color--primary-contrast mdl-shadow--4dp">
         <img title="Filter" class="inputbox__icon" src="images/filter_list_black_24px.svg" alt="Filter">

@@ -88,6 +88,19 @@ var ViewModel = function() {
     }
   };
   /**
+   * Error binding for displaying an error screen
+   * @type {KnockoutObservable<String>} String that contains the error message
+   */
+  this.error = ko.observable(null);
+  /**
+   * Boolean value. True on error free, false on otherwise.
+   * Depends on whether this.error is set.
+   * @type {KnockoutComputed<Boolean>} Self explained boolean
+   */
+  this.errorFree = ko.pureComputed(function() {
+    return !Boolean(this.error());
+  }, this);
+  /**
    * Filtering function
    * @type {KnockoutComputed<T>}
    */
@@ -144,19 +157,9 @@ var ViewModel = function() {
       // and finally set the marker
       marker.setMap(map);
     }
-  }, function(error) {
+  }, error => {
     console.error('Failed:', error);
-    document.body.classList.add(
-      'error',
-      'mdl-color--grey-300',
-      'mdl-color-text--grey-700'
-    );
-    document.body.innerHTML = '<div class="error__text">' +
-      '<h1>Oops, something went wrong</h1>' +
-      '<h2>' +
-      error +
-      '</h2>' +
-      '</div>';
+    this.error(error);
   });
 };
 

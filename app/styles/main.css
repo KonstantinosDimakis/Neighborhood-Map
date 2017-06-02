@@ -25,7 +25,7 @@ html, body {
   padding: 0;
 }
 
-body, main {
+body, main, #error-panel {
   height: 100%;
 }
 
@@ -135,15 +135,4 @@ body, main {
   justify-content: space-around;
   display: flex;
   flex-flow: row wrap;
-}
-
-/* Error */
-
-.error {
-  display: flex;
-}
-
-.error__text {
-  text-align: center;
-  margin: auto;
 }
