@@ -44,10 +44,11 @@ var ViewModel = function() {
     map.panTo(venue.location);
     map.setZoom(17);
     venue.marker.setAnimation(google.maps.Animation.BOUNCE);
-    // stop bounce animation after 4 seconds
+    // Each bounce is about 700ms as of google maps version js?v=3.13
+    const MARKER_JUMP = 700;
     setTimeout(function() {
       venue.marker.setAnimation(null);
-    }, 4000);
+    }, 3 * MARKER_JUMP);
   };
   /**
    * Toggle venues list, venue details drawer and map
