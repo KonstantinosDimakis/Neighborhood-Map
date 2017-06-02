@@ -50,8 +50,8 @@ body, main {
 .mdl-filterbox .mdl-filterbox__input {
   border: none;
   outline: none;
-  /* icon 24px + 8px = 32px */
-  width: calc(100% - 32px);
+  flex-basis: 0;
+  flex-grow: 1;
 }
 
 .mdl-filterbox .mdl-filterbox__icon {
