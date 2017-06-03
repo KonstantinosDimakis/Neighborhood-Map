@@ -80,12 +80,12 @@ var ViewModel = function() {
    */
   this.markers = [];
   /**
-   * Unset markers on a given markers array
+   * Hide markers on a given markers array
    * @param {Array} markers Google Maps Markers Array
    */
-  this.unsetMarkers = markers => {
+  this.hideMarkers = markers => {
     for (var marker of markers) {
-      marker.setMap(null);
+      marker.setVisible(false);
     }
   };
   /**
@@ -109,7 +109,7 @@ var ViewModel = function() {
     var filter = this.filter();
     if (filter === '') {
       for (var marker of this.markers) {
-        marker.setMap(map);
+        marker.setVisible(true);
       }
       return this.venues();
     }
@@ -122,11 +122,11 @@ var ViewModel = function() {
         venue.category.name === filter ||
         venue.name === filter;
     });
-    // unset all markers
-    this.unsetMarkers(this.markers);
-    // and reset those from the search results
+    // hide all markers
+    this.hideMarkers(this.markers);
+    // and show those from the search results
     for (var venue of filteredVenues) {
-      venue.marker.setMap(map);
+      venue.marker.setVisible(true);
     }
     // finally return the filtered venue results
     return filteredVenues;
