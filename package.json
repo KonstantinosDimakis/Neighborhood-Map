@@ -45,7 +45,7 @@
       "ko": true,
       "google": true,
       "dataModel": true,
-      "viewModel": true,
+      "ViewModel": true,
       "map": true
     }
   },
