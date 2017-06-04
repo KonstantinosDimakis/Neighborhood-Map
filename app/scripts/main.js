@@ -71,7 +71,24 @@
       console.error('Error during service worker registration:', e);
     });
   }
+  // Google maps on error can't be handled with KO
+  // due to the way scripts are organized (async).
+  // So it needs to be handled here
+  window.googleMapsOnError = () => {
+    const errorMessage = 'Google Maps did not load correctly';
+    const htmlTemplate =
+      '<div id="error-panel"' +
+        'class="error mdl-typography--text-center mdl-color--grey-300 mdl-color-text--grey-700">' + // eslint-disable-line max-len
+        '<div class="error__body-center">' +
+          '<h1>Oops, something went wrong</h1>' +
+          '<h2>' + errorMessage + '</h2>' +
+        '</div>' +
+      '</div>';
+    document.body.innerHTML = htmlTemplate;
+  };
+  // Called by google maps callback
   window.initMap = () => {
+    // initialize map
     window.map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 38.464525, lng: 23.60507},
       zoom: 12,
@@ -216,5 +233,7 @@
       // Allows the user to adjust the map to road, satellite, terrain etc
       mapTypeControl: false
     });
+    // initialize bindings
+    ko.applyBindings(new ViewModel());
   };
 })();

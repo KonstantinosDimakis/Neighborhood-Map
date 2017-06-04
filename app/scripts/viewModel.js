@@ -1,6 +1,4 @@
-// If I am to create a Venue class I think it should be here
-
-var ViewModel = function() {
+var ViewModel = function() { // eslint-disable-line no-unused-vars
   'use strict';
   /**
    * Holds the value of filterbox
@@ -163,12 +161,4 @@ var ViewModel = function() {
     console.error('Failed:', error);
     this.error(error);
   });
-  // handle google maps on error
-  // TODO: Maybe put it somewhere not in here? Maybe main.js
-  window.googleMapsOnError = () => {
-    const errorMessage = 'Google Maps did not load correctly';
-    this.error(errorMessage);
-  };
 };
-
-ko.applyBindings(new ViewModel());
