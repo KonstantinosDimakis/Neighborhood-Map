@@ -59,71 +59,53 @@ body, main, #error-panel {
 
 /* Venue Details */
 
-#venue-details {
+/* mdl-card-details extends mdl-card class */
+.mdl-card-details {
   border-radius: 0;
   width: 100%;
 }
 
-#venue-details .venue-details__media {
+.mdl-card-details .mdl-card-details__media {
   height: 200px;
 }
 
-#venue-details__header {
-  flex-flow: row wrap;
+.mdl-card-details__header {
+  margin: 0;
 }
 
-#venue-details__header--title {
-  flex:  1 0 100%;
-}
-
-#venue-details__header--rating {
-  align-items: center;
-  display: flex;
-  flex-flow: row wrap;
-  flex:  1 0 100%;
-}
-
-#venue-details__header--rating-number {
+.mdl-card-details .mdl-card-details__header .mdl-card-details__header--rating-number {
   margin-right: 8px;
 }
 
-#venue-details .powered-by-foursquare {
+.mdl-card-details .mdl-card-details__actions {
+  justify-content: space-around;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.mdl-card .mdl-card--border {
+  border-top: 1px solid rgba(0,0,0,.1);
+}
+
+.mdl-card-details .mdl-card-details__supporting-information {
+  width: 100%;
+}
+
+.mdl-card-details .mdl-card-details__supporting-information--text {
+  color: rgba(0,0,0,.87);
+}
+
+.mdl-card-details .mdl-card-details__supporting-information--icon {
+  margin-right: 8px;
+}
+
+.mdl-card-details .powered-by-attribution {
   position: absolute;
   right: 0;
   bottom: 0;
 }
 
-#venue-details .powered-by-foursquare img {
+.mdl-card-details .powered-by-attribution img {
   width: 150px;
   height: auto;
-}
-
-.mdl-card .mdl-card--border {
-  border-top: 1px solid rgba(0,0,0,.1)
-}
-
-#venue-details .venue-details__supporting-information {
-  width: 100%;
-}
-
-#venue-details .venue-details__supporting-information .venue-details__supporting-information--text {
-  color: rgba(0,0,0,.87);
-}
-
-#venue-details .venue-details__supporting-information .venue-details__supporting-information--icon {
-  margin-right: 8px;
-}
-
-#venue-details__header--category {
-  flex:  1 0 100%;
-}
-
-#venue-details__header > *:not(:first-child) {
-  margin-top: 8px;
-}
-
-#venue-details__actions {
-  justify-content: space-around;
-  display: flex;
-  flex-flow: row wrap;
 }
