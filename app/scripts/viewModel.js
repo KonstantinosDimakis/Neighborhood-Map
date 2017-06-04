@@ -90,6 +90,7 @@ var ViewModel = function() {
   };
   /**
    * Error binding for displaying an error screen
+   * To display an error simply set an error message
    * @type {KnockoutObservable<String>} String that contains the error message
    */
   this.error = ko.observable(null);
@@ -162,6 +163,12 @@ var ViewModel = function() {
     console.error('Failed:', error);
     this.error(error);
   });
+  // handle google maps on error
+  // TODO: Maybe put it somewhere not in here? Maybe main.js
+  window.googleMapsOnError = () => {
+    const errorMessage = 'Google Maps did not load correctly';
+    this.error(errorMessage);
+  };
 };
 
 ko.applyBindings(new ViewModel());

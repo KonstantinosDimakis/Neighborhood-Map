@@ -80,7 +80,7 @@
     <link rel="stylesheet" href="styles/typography.css">
   </head>
   <body>
-    <!--TODO: Smoothen out all the toggling list & drawer animations-->
+    <!--TODO: Rethink to put a loading spinner instead of flushing the error-->
     <div id="error-panel" data-bind="visible: error" class="error mdl-typography--text-center mdl-color--grey-300 mdl-color-text--grey-700">
       <div class="error__body-center">
         <h1>Oops, something went wrong</h1>
@@ -194,7 +194,7 @@
       </section>
     </main>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAY3JZUU5wWuZzfJQXNViKoZ8baXhfTLS0"></script>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAY3JZUU5wWuZzfJQXNViKoZ8baXhfTLS0&callback=initMap" onerror="googleMapsOnError()"></script>
     <!-- build:js scripts/main.min.js -->
     <script src="scripts/main.js"></script>
     <script src="scripts/dataModel.js"></script>
