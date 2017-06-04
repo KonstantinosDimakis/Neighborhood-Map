@@ -1,0 +1,20 @@
+.inputbox {
+  display: flex;
+  flex-flow: row wrap;
+  padding: 12px 4px;
+}
+
+.inputbox .inputbox__input {
+  border: none;
+  outline: none;
+  flex-basis: 0;
+  flex-grow: 1;
+  margin: 0 8px;
+}
+
+.inputbox .inputbox__icon {
+  margin: 0 8px;
+  outline: none;
+  width: 24px;
+  height: 24px;
+}

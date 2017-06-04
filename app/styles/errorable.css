@@ -2,7 +2,6 @@
   display: flex;
 }
 
-.error__text {
-  text-align: center;
+.error .error__body-center {
   margin: auto;
 }
