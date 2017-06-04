@@ -19,6 +19,8 @@ Note: any .css or .scss files included in the 'styles' directory
 will be correctly compiled during `gulp serve` and `gulp`
  */
 
+/* General */
+
 html, body {
   font-family: 'Roboto', 'Helvetica', sans-serif;
   margin: 0;
@@ -50,20 +52,9 @@ body, main, #error-panel {
 
 /* Venue Cards */
 
-.mdl-venue-card {
+.mdl-venue-card--small {
   width: 150px;
   padding: 8px !important;
-}
-
-.mdl-venue-card .mdl-venue-card__title {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin: 0;
-}
-
-.mdl-venue-card .mdl-venue-card__category{
-  margin: 0;
 }
 
 /* Venue Details */

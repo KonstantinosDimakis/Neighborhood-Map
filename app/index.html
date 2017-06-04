@@ -77,6 +77,7 @@
     <link rel="stylesheet" href="styles/unstyled.css">
     <link rel="stylesheet" href="styles/errorable.css">
     <link rel="stylesheet" href="styles/inputbox.css">
+    <link rel="stylesheet" href="styles/typography.css">
   </head>
   <body>
     <!--TODO: Smoothen out all the toggling list & drawer animations-->
@@ -173,19 +174,20 @@
           </footer>
         </article>
       </section>
-      <section data-bind="visible: isListVisible, foreach: venuesToShow" id="venues-cards" class="scrlb-content--x scrlb-content--x-margin-8dp">
-        <article data-bind="click: $parent.venueClick" class="mdl-grid mdl-grid--no-spacing mdl-venue-card mdl-shadow--4dp mdl-color--primary-contrast">
-          <h3 data-bind="text: name" class="mdl-typography--title mdl-venue-card__title mdl-cell mdl-cell--12-col"></h3>
+      <section data-bind="visible: isListVisible, foreach: venuesToShow" class="scrlb-content--x scrlb-content--x-margin-8dp">
+        <article data-bind="click: $parent.venueClick" class="mdl-grid mdl-grid--no-spacing mdl-venue-card--small mdl-shadow--4dp mdl-color--primary-contrast">
+          <h3 data-bind="text: name" class="mdl-typography--title typography--text-ellipsis mdl-cell mdl-cell--12-col"></h3>
           <section data-bind="foreach: rating.stars" class="mdl-cell mdl-cell--12-col">
             <img data-bind="attr: {src: $data}" alt="Star">
           </section>
-          <section class="mdl-color-text--grey-600 mdl-cell mdl-cell--12-col">
+          <section class="mdl-typography--subhead mdl-typography--subhead-color-contrast mdl-cell mdl-cell--12-col">
             <img src="images/location_gray_24px.svg" alt="Distance">
-            <span data-bind="text: distance" class="mdl-typography--subhead"></span>
+            <span data-bind="text: distance"></span>
+            <span>m</span>
           </section>
           <section class="mdl-cell mdl-cell--12-col">
-            <span class="mdl-venue-card__category mdl-chip mdl-chip--contact">
-              <img data-bind="attr : {src: icon}" class="mdl-chip__contact mdl-color--primary">
+            <span class="mdl-chip mdl-chip--contact">
+              <img data-bind="attr : {src: icon}" class="mdl-chip__contact">
               <span data-bind="text: category.tag" class="mdl-chip__text"></span>
             </span>
           </section>
