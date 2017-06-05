@@ -47,6 +47,10 @@ var ViewModel = function() { // eslint-disable-line no-unused-vars
     setTimeout(function() {
       venue.marker.setAnimation(null);
     }, 3 * MARKER_JUMP);
+    // This functionality does not match my own UI
+    // but it was asked by my reviewer to do this regardless
+    // if it was shown or not cause of the rubric requirements
+    this.markerClick(venue);
   };
   /**
    * Toggle venues list, venue details drawer and map
