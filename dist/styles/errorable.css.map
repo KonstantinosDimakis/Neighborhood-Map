@@ -1,0 +1,1 @@
+{"version":3,"sources":["errorable.css"],"names":[],"mappings":"AAAA,OACE,oBAAc,AAAd,YAAc,CACf,AAED,2BACE,WAAa,CACd","file":"errorable.css","sourcesContent":[".error {\n  display: flex;\n}\n\n.error .error__body-center {\n  margin: auto;\n}\n"]}

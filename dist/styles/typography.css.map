@@ -1,0 +1,1 @@
+{"version":3,"sources":["typography.css"],"names":[],"mappings":"AAAA,2BACE,mBAAoB,AACpB,gBAAiB,AACjB,sBAAwB,CACzB","file":"typography.css","sourcesContent":[".typography--text-ellipsis {\n  white-space: nowrap;\n  overflow: hidden;\n  text-overflow: ellipsis;\n}\n"]}
