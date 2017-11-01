@@ -20,7 +20,7 @@ This web app has a map featuring 50 popular places (Burger Joints, Seafood Resta
 
 ## Use the app
 
-* Visit:
+* Visit [online](https://kostasdimakis.github.io/Neighborhood-Map/dist/).
 
 or
 
