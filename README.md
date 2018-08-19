@@ -1,3 +1,5 @@
+*NOTICE: Foursquare API has changed. This app is not maintained.*
+
 # Neighborhood-Map
 
 Neighborhood-Map ([Web Starter Kit](https://github.com/google/web-starter-kit) based project) was developed for showcasing all the skills I've been taught in part 5 of [Udacity](https://www.udacity.com/)'s [Front End Web Devloper Nanodegree](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001) such as using a Front End Framework, [Ajax Requests](https://developer.mozilla.org/en-US/docs/AJAX) and [Google Maps Javascript API](https://developers.google.com/maps/documentation/javascript/).
